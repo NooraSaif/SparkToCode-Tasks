@@ -172,35 +172,81 @@
             //////////////////////////////////////////////////////////////////////////////////////////////////
 
             //Task-9 Day name finder
-            Console.WriteLine("Enter number from 1 to 7 to represent the day of the week ");
-            int day = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter number from 1 to 7 to represent the day of the week ");
+            //int day = int.Parse(Console.ReadLine());
 
-            switch (day)
-            {
-                case 1:
-                    Console.WriteLine("Sunday");
+            //switch (day)
+            //{
+            //    case 1:
+            //        Console.WriteLine("Sunday");
+            //        break;
+            //    case 2:
+            //        Console.WriteLine("Monday");
+            //        break;
+            //    case 3:
+            //        Console.WriteLine("Tuesday");
+            //        break;
+            //    case 4:
+            //        Console.WriteLine("Wednesday");
+            //        break;
+            //    case 5:
+            //        Console.WriteLine("Thursday");
+            //        break;
+            //    case 6:
+            //        Console.WriteLine("Friday");
+            //        break;
+            //    case 7:
+            //        Console.WriteLine("Saturday");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Invalid number, please enter a number from 1 to 7.");
+            //        break;
+            ////////////////////////////////////////////////////////////////////////////
+
+            //Task-10 Mini Calculator
+            Console.WriteLine("Enter the first number");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the secound number");
+            int num2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Select operator charachter (+, -, *, /, %) ");
+            string form = Console.ReadLine();
+
+            switch (form) 
+            { 
+                case "+":
+                    Console.WriteLine("The result is: " + (num1 + num2));
                     break;
-                case 2:
-                    Console.WriteLine("Monday");
+                case "-":
+                    Console.WriteLine("The result is: " + (num1 - num2));
                     break;
-                case 3:
-                    Console.WriteLine("Tuesday");
+                case "*":
+                    Console.WriteLine("The result is: " + (num1 * num2));
                     break;
-                case 4:
-                    Console.WriteLine("Wednesday");
+                case "/":
+                    if (num2 != 0)
+                    {
+                        Console.WriteLine("The result is: " + (num1 / num2));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Division by zero is not allowed.");
+                    }
                     break;
-                case 5:
-                    Console.WriteLine("Thursday");
-                    break;
-                case 6:
-                    Console.WriteLine("Friday");
-                    break;
-                case 7:
-                    Console.WriteLine("Saturday");
+                case "%":
+                    if (num2 != 0)
+                    {
+                        Console.WriteLine("The result is: " + (num1 % num2));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Division by zero is not allowed.");
+                    }
                     break;
                 default:
-                    Console.WriteLine("Invalid number, please enter a number from 1 to 7.");
-                    break;
+                    Console.WriteLine("Invalid operator, please select a valid operator (+, -, *, /, %).");
+                    break;  
             }
         }
     }
