@@ -48,24 +48,59 @@
             ////////////////////////////////////////////////
 
             //Task-4 Create Voting Eligibility Checker
-            Console.WriteLine("Enter your age: ");
-            int age = int.Parse (Console.ReadLine());
+            //Console.WriteLine("Enter your age: ");
+            //int age = int.Parse (Console.ReadLine());
 
-            Console.WriteLine("Do you have a valid national ID ? (yes/no): ");
-            string hasID = Console.ReadLine();
+            //Console.WriteLine("Do you have a valid national ID ? (yes/no): ");
+            //string hasID = Console.ReadLine();
 
-            bool hasValidID = hasID == "yes";
+            //bool hasValidID = hasID == "yes";
 
-            if (age >= 18 && hasValidID == true)
-            {
-                Console.WriteLine("You are eligible to vote.");
-            }
-            else 
-            {
-                Console.WriteLine("You are not eligible to vote.");
-            }
+            //if (age >= 18 && hasValidID == true)
+            //{
+            //    Console.WriteLine("You are eligible to vote.");
+            //}
+            //else 
+            //{
+            //    Console.WriteLine("You are not eligible to vote.");
+            //}
             ///////////////////////////////////////////////////////////////////
             
+            //Task-5 Grade letter lookup
+
+            Console.WriteLine("Grade Options:");
+            Console.WriteLine("A");
+            Console.WriteLine("B");
+            Console.WriteLine("C");
+            Console.WriteLine("D");
+            Console.WriteLine("F");
+
+            Console.WriteLine("Select a grade:");
+            char grade = char.Parse (Console.ReadLine());
+
+            switch (grade) 
+            {
+                case 'A':
+                    Console.WriteLine("Excellent");
+                    break;
+                case 'B':
+                    Console.WriteLine("Good");
+                    break;
+                case 'C':
+                    Console.WriteLine("Average");
+                    break;
+                case 'D':
+                    Console.WriteLine("Below Average");
+                    break;
+                case 'F':
+                    Console.WriteLine("Failing");
+                    break;
+                default:
+                    Console.WriteLine("Invalid grade");
+                    break;
+
+            }
+
 
 
         }
