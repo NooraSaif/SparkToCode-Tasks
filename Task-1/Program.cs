@@ -152,22 +152,55 @@
             ////////////////////////////////////////////////////////////////////
 
             //Task-8 create Restaurant Bill Calculator with Membership Discount
-            Console.WriteLine("Enter your total bill amount");
-            double billAmount = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your total bill amount");
+            //double billAmount = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Are you a loyalty member? (yes/no)");
-            string isloyal = Console.ReadLine();
+            //Console.WriteLine("Are you a loyalty member? (yes/no)");
+            //string isloyal = Console.ReadLine();
 
-            bool loyalityMember = isloyal == "yes";
+            //bool loyalityMember = isloyal == "yes";
 
-            if (billAmount >= 20 && loyalityMember == true)
+            //if (billAmount >= 20 && loyalityMember == true)
+            //{
+            //    double afterDiscount = billAmount - (billAmount * 0.15);
+            //    Console.WriteLine("Your discount is 15%. Your final bill amount is: " + afterDiscount + " OMR");
+            //}
+            //else 
+            //{
+            //    Console.WriteLine("You do not have a discount. our final bill amount is: " + billAmount);
+            //}
+            //////////////////////////////////////////////////////////////////////////////////////////////////
+
+            //Task-9 Day name finder
+            Console.WriteLine("Enter number from 1 to 7 to represent the day of the week ");
+            int day = int.Parse(Console.ReadLine());
+
+            switch (day)
             {
-                double afterDiscount = billAmount - (billAmount * 0.15);
-                Console.WriteLine("Your discount is 15%. Your final bill amount is: " + afterDiscount + " OMR");
-            }
-            else 
-            {
-                Console.WriteLine("You do not have a discount. our final bill amount is: " + billAmount);
+                case 1:
+                    Console.WriteLine("Sunday");
+                    break;
+                case 2:
+                    Console.WriteLine("Monday");
+                    break;
+                case 3:
+                    Console.WriteLine("Tuesday");
+                    break;
+                case 4:
+                    Console.WriteLine("Wednesday");
+                    break;
+                case 5:
+                    Console.WriteLine("Thursday");
+                    break;
+                case 6:
+                    Console.WriteLine("Friday");
+                    break;
+                case 7:
+                    Console.WriteLine("Saturday");
+                    break;
+                default:
+                    Console.WriteLine("Invalid number, please enter a number from 1 to 7.");
+                    break;
             }
         }
     }
