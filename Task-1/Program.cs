@@ -65,43 +65,68 @@
             //    Console.WriteLine("You are not eligible to vote.");
             //}
             ///////////////////////////////////////////////////////////////////
-            
+
             //Task-5 Grade letter lookup
 
-            Console.WriteLine("Grade Options:");
-            Console.WriteLine("A");
-            Console.WriteLine("B");
-            Console.WriteLine("C");
-            Console.WriteLine("D");
-            Console.WriteLine("F");
+            //Console.WriteLine("Grade Options:");
+            //Console.WriteLine("A");
+            //Console.WriteLine("B");
+            //Console.WriteLine("C");
+            //Console.WriteLine("D");
+            //Console.WriteLine("F");
 
-            Console.WriteLine("Select a grade:");
-            char grade = char.Parse (Console.ReadLine());
+            //Console.WriteLine("Select a grade:");
+            //char grade = char.Parse (Console.ReadLine());
 
-            switch (grade) 
+            //switch (grade) 
+            //{
+            //    case 'A':
+            //        Console.WriteLine("Excellent");
+            //        break;
+            //    case 'B':
+            //        Console.WriteLine("Very Good");
+            //        break;
+            //    case 'C':
+            //        Console.WriteLine("Good");
+            //        break;
+            //    case 'D':
+            //        Console.WriteLine("Pass");
+            //        break;
+            //    case 'F':
+            //        Console.WriteLine("Fail");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Invalid grade");
+            //        break;
+
+            //}
+            //////////////////////////////////////////////////////////////
+
+            //Task-6 Temperature Converter
+            Console.WriteLine("Enter the temperature in Celsius:");
+            double C = double.Parse (Console.ReadLine());
+
+            double F = (C * 9 / 5) + 32;
+
+            Console.WriteLine("Temperature in Fahrenheit: " + F);
+
+            if (C < 10) 
             {
-                case 'A':
-                    Console.WriteLine("Excellent");
-                    break;
-                case 'B':
-                    Console.WriteLine("Good");
-                    break;
-                case 'C':
-                    Console.WriteLine("Average");
-                    break;
-                case 'D':
-                    Console.WriteLine("Below Average");
-                    break;
-                case 'F':
-                    Console.WriteLine("Failing");
-                    break;
-                default:
-                    Console.WriteLine("Invalid grade");
-                    break;
-
+                Console.WriteLine("Cold");
             }
 
-
+            else if (C >= 10 && C <= 30)
+            {
+                Console.WriteLine("Mild");
+            }
+            else if (C > 30)
+            {
+                Console.WriteLine("Hot");
+            }
+            else
+            {
+                Console.WriteLine("Invalid temperature");
+            }
 
         }
     }
