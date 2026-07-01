@@ -103,31 +103,52 @@
             //////////////////////////////////////////////////////////////
 
             //Task-6 Temperature Converter
-            Console.WriteLine("Enter the temperature in Celsius:");
-            double C = double.Parse (Console.ReadLine());
+            //Console.WriteLine("Enter the temperature in Celsius:");
+            //double C = double.Parse (Console.ReadLine());
 
-            double F = (C * 9 / 5) + 32;
+            //double F = (C * 9 / 5) + 32;
 
-            Console.WriteLine("Temperature in Fahrenheit: " + F);
+            //Console.WriteLine("Temperature in Fahrenheit: " + F);
 
-            if (C < 10) 
+            //if (C < 10) 
+            //{
+            //    Console.WriteLine("Cold");
+            //}
+
+            //else if (C >= 10 && C <= 30)
+            //{
+            //    Console.WriteLine("Mild");
+            //}
+            //else if (C > 30)
+            //{
+            //    Console.WriteLine("Hot");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Invalid temperature");
+            //}
+            ////////////////////////////////////////////////////////////
+
+            //Task-7 Movie Ticket Price Calculator
+            Console.WriteLine("Enter your age in year: ");
+            int age = int.Parse(Console.ReadLine());
+
+            if (age >= 0 && age <= 12)
             {
-                Console.WriteLine("Cold");
+                Console.WriteLine("You are a child. and your ticket price is 2.000 OMR");
             }
-
-            else if (C >= 10 && C <= 30)
+            else if (age >= 13 && age <= 59)
             {
-                Console.WriteLine("Mild");
+                Console.WriteLine("You are a Adults. and your ticket price is 5.000 OMR");
             }
-            else if (C > 30)
+            else if (age >= 60)
             {
-                Console.WriteLine("Hot");
+                Console.WriteLine("You are a Seniors. and your ticket price is 3.000 OMR");
             }
-            else
+            else 
             {
-                Console.WriteLine("Invalid temperature");
+                Console.WriteLine("Invalid age, please enter a valid age.");
             }
-
         }
     }
 }
