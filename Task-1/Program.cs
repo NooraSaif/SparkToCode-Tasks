@@ -47,6 +47,26 @@
             //}
             ////////////////////////////////////////////////
 
+            //Task-4 Create Voting Eligibility Checker
+            Console.WriteLine("Enter your age: ");
+            int age = int.Parse (Console.ReadLine());
+
+            Console.WriteLine("Do you have a valid national ID ? (yes/no): ");
+            string hasID = Console.ReadLine();
+
+            bool hasValidID = hasID == "yes";
+
+            if (age >= 18 && hasValidID == true)
+            {
+                Console.WriteLine("You are eligible to vote.");
+            }
+            else 
+            {
+                Console.WriteLine("You are not eligible to vote.");
+            }
+            ///////////////////////////////////////////////////////////////////
+            
+
 
         }
     }
