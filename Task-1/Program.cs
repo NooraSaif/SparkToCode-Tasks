@@ -405,82 +405,148 @@ namespace Task_1
             ///////////////////////////////////////////////////////////
 
             //Task-14 Online store checkout 
-            Console.WriteLine("Enter a product code (1, 2, 3): ");
-            int productCode = int.Parse(Console.ReadLine());
+            //Console.WriteLine("select a product by Entering the product code (1, 2, 3): ");
+            //Console.WriteLine("1. Headphone ");
+            //Console.WriteLine("2. Keyboard ");
+            //Console.WriteLine("3. Mouse ");
+            //int productCode = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the number of products you want to buy: ");
-            int quantity = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the number of products you want to buy: ");
+            //int quantity = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Do you have discount coupon? (yes/no): ");
-            string coupon = Console.ReadLine();
+            //Console.WriteLine("Do you have discount coupon? (yes/no): ");
+            //string coupon = Console.ReadLine();
 
-            bool hasCoupon = coupon == "yes";
+            //bool hasCoupon = coupon == "yes";
 
-            switch (productCode)
+            //switch (productCode)
+            //{
+            //    case 1:
+            //        Console.WriteLine("you selected a Headphone. the unit price is 8.500 OMR");
+            //        double subtotal1 = quantity * 8.500;
+            //        Console.WriteLine("the subtotal is " + subtotal1 + "OMR");
+
+            //        if (subtotal1 >= 20 && hasCoupon == true)
+            //        {
+            //            Console.WriteLine("You have a 10% discount");
+            //            Console.WriteLine("the tax is 5%");
+            //            double afterDiscount = subtotal1 - (subtotal1 * 0.10);
+            //            double afterTax = afterDiscount + (afterDiscount * 0.05);
+            //            Console.WriteLine("the total after discount is " + afterDiscount + "OMR");
+            //            Console.WriteLine("the final total after appling the tax is " + afterTax + "OMR");
+            //        }
+            //        else 
+            //        {
+            //            Console.WriteLine("No discount");
+            //        }
+
+            //        break;
+
+            //    case 2:
+            //        Console.WriteLine("you selected a Keyboard. the unit price is 12.000 OMR");
+            //        double subtotal2 = quantity * 12.000;
+            //        Console.WriteLine("the subtotal is " + subtotal2 + "OMR");
+
+            //        if (subtotal2 >= 20 && hasCoupon == true)
+            //        {
+            //            Console.WriteLine("You have a 10% discount");
+            //            Console.WriteLine("the tax is 5%");
+            //            double afterDiscount = subtotal2 - (subtotal2 * 0.10);
+            //            double afterTax = afterDiscount + (afterDiscount * 0.05);
+            //            Console.WriteLine("the total after discount is " + afterDiscount + "OMR");
+            //            Console.WriteLine("the final total after appling the tax is " + afterTax + "OMR");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("No discount");
+            //        }
+            //        break;
+
+            //    case 3:
+            //        Console.WriteLine("you selected a Mouse. the unit price is 5.000 OMR");
+            //        double subtotal3 = quantity * 5.000;
+            //        Console.WriteLine("the subtotal is " + subtotal3 + "OMR");
+
+            //        if (subtotal3 >= 20 && hasCoupon == true)
+            //        {
+            //            Console.WriteLine("You have a 10% discount");
+            //            Console.WriteLine("the tax is 5%");
+            //            double afterDiscount = subtotal3 - (subtotal3 * 0.10);
+            //            double afterTax = afterDiscount + (afterDiscount * 0.05);
+            //            Console.WriteLine("the total after discount is " + afterDiscount + "OMR");
+            //            Console.WriteLine("the final total after appling the tax is " + afterTax + "OMR");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("No discount");
+            //        }
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("Invalid product code");
+            //        break;
+            //}
+            ///////////////////////////////////////////////
+
+            //Task-15 University admission decision
+            Console.WriteLine("select a program code");
+            Console.WriteLine("S for science ");
+            Console.WriteLine("A for Arts");
+            char programType = char.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the applicant's GPA (out of 4.0)");
+            double GPA = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter exam score (out of 100)");
+            double examScore = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Do you have extracurricular achievements (yes/no)");
+            string achievement = Console.ReadLine();
+
+            bool hasAchievements = achievement == "yes";
+
+            switch (programType)
             {
-                case 1:
-                    Console.WriteLine("you selected a Headphone. the unit price is 8.500 OMR");
-                    double subtotal1 = quantity * 8.500;
-                    Console.WriteLine("the subtotal is " + subtotal1 + "OMR");
-
-                    if (subtotal1 >= 20 && hasCoupon == true)
+                case 'S':
+                    if (GPA >= 3.0 && GPA <= 4.0 && examScore >= 75 && examScore <= 100)
                     {
-                        Console.WriteLine("You have a 10% discount");
-                        Console.WriteLine("the tax is 5%");
-                        double afterDiscount = subtotal1 - (subtotal1 * 0.10);
-                        double afterTax = afterDiscount + (afterDiscount * 0.05);
-                        Console.WriteLine("the total after discount is " + afterDiscount + "OMR");
-                        Console.WriteLine("the final total after appling the tax is " + afterTax + "OMR");
+                        Console.WriteLine("Admitted to Science program");
                     }
-                    else 
+                    else if (GPA > 4.0 && examScore > 100)
                     {
-                        Console.WriteLine("No discount");
+                        Console.WriteLine("You enterd invalied numbers");
                     }
-
-                    break;
-
-                case 2:
-                    Console.WriteLine("you selected a Keyboard. the unit price is 12.000 OMR");
-                    double subtotal2 = quantity * 12.000;
-                    Console.WriteLine("the subtotal is " + subtotal2 + "OMR");
-
-                    if (subtotal2 >= 20 && hasCoupon == true)
+                    else if (hasAchievements == true)
                     {
-                        Console.WriteLine("You have a 10% discount");
-                        Console.WriteLine("the tax is 5%");
-                        double afterDiscount = subtotal2 - (subtotal2 * 0.10);
-                        double afterTax = afterDiscount + (afterDiscount * 0.05);
-                        Console.WriteLine("the total after discount is " + afterDiscount + "OMR");
-                        Console.WriteLine("the final total after appling the tax is " + afterTax + "OMR");
+                        Console.WriteLine("Conditinally admission to Science program");
                     }
                     else
                     {
-                        Console.WriteLine("No discount");
+                        Console.WriteLine("Not admitted to Science program");
                     }
                     break;
 
-                case 3:
-                    Console.WriteLine("you selected a Mouse. the unit price is 5.000 OMR");
-                    double subtotal3 = quantity * 5.000;
-                    Console.WriteLine("the subtotal is " + subtotal3 + "OMR");
-
-                    if (subtotal3 >= 20 && hasCoupon == true)
+                case 'A':
+                    if (GPA >= 2.5 && examScore >= 60)
                     {
-                        Console.WriteLine("You have a 10% discount");
-                        Console.WriteLine("the tax is 5%");
-                        double afterDiscount = subtotal3 - (subtotal3 * 0.10);
-                        double afterTax = afterDiscount + (afterDiscount * 0.05);
-                        Console.WriteLine("the total after discount is " + afterDiscount + "OMR");
-                        Console.WriteLine("the final total after appling the tax is " + afterTax + "OMR");
+                        Console.WriteLine("Admitted to Arts program");
+                    }
+                    else if (GPA > 4.0 && examScore > 100)
+                    {
+                        Console.WriteLine("You enterd invalied numbers");
+                    }
+                    else if (hasAchievements == true)
+                    {
+                        Console.WriteLine("Conditinally admission to Arts program");
                     }
                     else
                     {
-                        Console.WriteLine("No discount");
+                        Console.WriteLine("Not admitted to Arts program");
                     }
                     break;
 
                 default:
-                    Console.WriteLine("Invalid product code");
+                    Console.WriteLine("Invalid program code");
                     break;
             }
         }
