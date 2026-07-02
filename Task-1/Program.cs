@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.ComponentModel.Design;
+using System.Numerics;
 
 namespace Task_1
 {
@@ -287,87 +288,121 @@ namespace Task_1
             /////////////////////////////////////////////////////
 
             //Task-12 Shipping Cost Calculator
-            Console.WriteLine("Choose the region code");
-            Console.WriteLine("A. Local");
-            Console.WriteLine("B. National");
-            Console.WriteLine("C. International");
-            char region = char.Parse(Console.ReadLine());
+            //Console.WriteLine("Choose the region code");
+            //Console.WriteLine("A. Local");
+            //Console.WriteLine("B. National");
+            //Console.WriteLine("C. International");
+            //char region = char.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the package weight in Kg ");
-            double weight = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the package weight in Kg ");
+            //double weight = double.Parse(Console.ReadLine());
 
-            switch (region) 
+            //switch (region) 
+            //{
+            //    case 'A':
+            //        Console.WriteLine("Local base cost is 1.000 OMR");
+            //        if (weight >= 5)
+            //        {
+            //            Console.WriteLine("Extra chatge for this weight is 2.000 OMR");
+            //            double totalCost = 1.000 + 2.000 + weight;
+            //            Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+            //        }
+            //        else if (weight >= 10)
+            //        {
+            //            Console.WriteLine("Extra chatge for this weight is 5.000 OMR");
+            //            double totalCost = 1.000 + 5.000 + weight;
+            //            Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("No extra charge for this weight");
+            //            double totalCost = 1.000 + weight;
+            //            Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+            //        }
+            //        break;
+
+            //    case 'B':
+            //        Console.WriteLine("Local base cost is 3.000 OMR");
+            //        if (weight >= 5)
+            //        {
+            //            Console.WriteLine("Extra chatge for this weight is 2.000 OMR");
+            //            double totalCost = 3.000 + 2.000 + weight;
+            //            Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+            //        }
+            //        else if (weight >= 10)
+            //        {
+            //            Console.WriteLine("Extra chatge for this weight is 5.000 OMR");
+            //            double totalCost = 3.000 + 5.000 + weight;
+            //            Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("No extra charge for this weight");
+            //            double totalCost = 3.000 + weight;
+            //            Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+            //        }
+            //        break;
+
+            //    case 'C':
+            //        Console.WriteLine("Local base cost is 7.000 OMR");
+            //        if (weight >= 5)
+            //        {
+            //            Console.WriteLine("Extra chatge for this weight is 2.000 OMR");
+            //            double totalCost = 7.000 + 2.000 + weight;
+            //            Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+            //        }
+            //        else if (weight >= 10)
+            //        {
+            //            Console.WriteLine("Extra chatge for this weight is 5.000 OMR");
+            //            double totalCost = 7.000 + 5.000 + weight;
+            //            Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("No extra charge for this weight");
+            //            double totalCost = 7.000 + weight;
+            //            Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+            //        }
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("error: please try again");
+            //        break;
+            //}
+            ///////////////////////////////////////////////////////////////
+
+            //Task-13 Triangle Type Classifier
+            Console.WriteLine("Enter the length of side 1: ");
+            double side1 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the length of side 2: ");
+            double side2 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the length of side 3: ");
+            double side3 = double.Parse(Console.ReadLine());
+
+            if ((side1 + side2) > side3)
             {
-                case 'A':
-                    Console.WriteLine("Local base cost is 1.000 OMR");
-                    if (weight >= 5)
-                    {
-                        Console.WriteLine("Extra chatge for this weight is 2.000 OMR");
-                        double totalCost = 1.000 + 2.000 + weight;
-                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
-                    }
-                    else if (weight >= 10)
-                    {
-                        Console.WriteLine("Extra chatge for this weight is 5.000 OMR");
-                        double totalCost = 1.000 + 5.000 + weight;
-                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No extra charge for this weight");
-                        double totalCost = 1.000 + weight;
-                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
-                    }
-                    break;
+                Console.WriteLine("The triangle is valid.");
 
-                case 'B':
-                    Console.WriteLine("Local base cost is 3.000 OMR");
-                    if (weight >= 5)
-                    {
-                        Console.WriteLine("Extra chatge for this weight is 2.000 OMR");
-                        double totalCost = 3.000 + 2.000 + weight;
-                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
-                    }
-                    else if (weight >= 10)
-                    {
-                        Console.WriteLine("Extra chatge for this weight is 5.000 OMR");
-                        double totalCost = 3.000 + 5.000 + weight;
-                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No extra charge for this weight");
-                        double totalCost = 3.000 + weight;
-                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
-                    }
-                    break;
-
-                case 'C':
-                    Console.WriteLine("Local base cost is 7.000 OMR");
-                    if (weight >= 5)
-                    {
-                        Console.WriteLine("Extra chatge for this weight is 2.000 OMR");
-                        double totalCost = 7.000 + 2.000 + weight;
-                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
-                    }
-                    else if (weight >= 10)
-                    {
-                        Console.WriteLine("Extra chatge for this weight is 5.000 OMR");
-                        double totalCost = 7.000 + 5.000 + weight;
-                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No extra charge for this weight");
-                        double totalCost = 7.000 + weight;
-                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
-                    }
-                    break;
-
-                default:
-                    Console.WriteLine("error: please try again");
-                    break;
+                if (side1 == side2 && side2 == side3 && side3 == side1)
+                {
+                    Console.WriteLine("The type of the triangle is Equilateral");
+                }
+                else if (side1 == side2 || side2 == side3 || side3 == side1)
+                {
+                    Console.WriteLine("The type of the triangle is Isosceles");
+                }
+                if (side1 != side2 && side2 != side3 && side3 != side1)
+                {
+                    Console.WriteLine("The type of the triangle is Scalene");
+                }
             }
+            else
+            {
+                Console.WriteLine("The triangle is not valid.");
+            }
+            
         }
     }
 }
