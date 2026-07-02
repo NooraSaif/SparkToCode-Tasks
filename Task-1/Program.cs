@@ -1,4 +1,6 @@
-﻿namespace Task_1
+﻿using System.Numerics;
+
+namespace Task_1
 {
     internal class Program
     {
@@ -251,36 +253,120 @@
             ///////////////////////////////////////////////////////////////////////////////////////////
 
             //Task-11 Loan Eligibility System 
-            Console.WriteLine("Enter your age: ");
-            int age = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your age: ");
+            //int age = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter your monthly income: ");
-            double income = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your monthly income: ");
+            //double income = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Do you have an existing loan ? (yes/no)");
-            string hasLoan = Console.ReadLine();
+            //Console.WriteLine("Do you have an existing loan ? (yes/no)");
+            //string hasLoan = Console.ReadLine();
 
-            bool existingLoan = hasLoan == "yes";
+            //bool existingLoan = hasLoan == "yes";
 
-            if (age >= 21 && age <= 60 && income >= 400 && !(existingLoan))
+            //if (age >= 21 && age <= 60 && income >= 400 && !(existingLoan))
+            //{
+            //    Console.WriteLine("Eligible for a loan.");
+            //}
+            //else if ((age < 21 || age > 60) && income >= 400 && !(existingLoan)) 
+            //{
+            //    Console.WriteLine("not eligible for a loan due to age out of range");
+            //}
+            //else if (age >= 21 && age <= 60 && income < 400 && !(existingLoan))
+            //{
+            //    Console.WriteLine("not eligible for a loan due to income is too low");
+            //}
+            //else if (age >= 21 && age <= 60 && income >= 400 && existingLoan == true)
+            //{
+            //    Console.WriteLine("not eligible for a loan due to has an existing loan");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Error: Please check your input and try again.");
+            //}
+            /////////////////////////////////////////////////////
+
+            //Task-12 Shipping Cost Calculator
+            Console.WriteLine("Choose the region code");
+            Console.WriteLine("A. Local");
+            Console.WriteLine("B. National");
+            Console.WriteLine("C. International");
+            char region = char.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the package weight in Kg ");
+            double weight = double.Parse(Console.ReadLine());
+
+            switch (region) 
             {
-                Console.WriteLine("Eligible for a loan.");
-            }
-            else if ((age < 21 || age > 60) && income >= 400 && !(existingLoan)) 
-            {
-                Console.WriteLine("not eligible for a loan due to age out of range");
-            }
-            else if (age >= 21 && age <= 60 && income < 400 && !(existingLoan))
-            {
-                Console.WriteLine("not eligible for a loan due to income is too low");
-            }
-            else if (age >= 21 && age <= 60 && income >= 400 && existingLoan == true)
-            {
-                Console.WriteLine("not eligible for a loan due to has an existing loan");
-            }
-            else
-            {
-                Console.WriteLine("Error: Please check your input and try again.");
+                case 'A':
+                    Console.WriteLine("Local base cost is 1.000 OMR");
+                    if (weight >= 5)
+                    {
+                        Console.WriteLine("Extra chatge for this weight is 2.000 OMR");
+                        double totalCost = 1.000 + 2.000 + weight;
+                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+                    }
+                    else if (weight >= 10)
+                    {
+                        Console.WriteLine("Extra chatge for this weight is 5.000 OMR");
+                        double totalCost = 1.000 + 5.000 + weight;
+                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No extra charge for this weight");
+                        double totalCost = 1.000 + weight;
+                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+                    }
+                    break;
+
+                case 'B':
+                    Console.WriteLine("Local base cost is 3.000 OMR");
+                    if (weight >= 5)
+                    {
+                        Console.WriteLine("Extra chatge for this weight is 2.000 OMR");
+                        double totalCost = 3.000 + 2.000 + weight;
+                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+                    }
+                    else if (weight >= 10)
+                    {
+                        Console.WriteLine("Extra chatge for this weight is 5.000 OMR");
+                        double totalCost = 3.000 + 5.000 + weight;
+                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No extra charge for this weight");
+                        double totalCost = 3.000 + weight;
+                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+                    }
+                    break;
+
+                case 'C':
+                    Console.WriteLine("Local base cost is 7.000 OMR");
+                    if (weight >= 5)
+                    {
+                        Console.WriteLine("Extra chatge for this weight is 2.000 OMR");
+                        double totalCost = 7.000 + 2.000 + weight;
+                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+                    }
+                    else if (weight >= 10)
+                    {
+                        Console.WriteLine("Extra chatge for this weight is 5.000 OMR");
+                        double totalCost = 7.000 + 5.000 + weight;
+                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No extra charge for this weight");
+                        double totalCost = 7.000 + weight;
+                        Console.WriteLine("Your Total shiping cost is : " + totalCost + "OMR");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("error: please try again");
+                    break;
             }
         }
     }
