@@ -372,37 +372,117 @@ namespace Task_1
             ///////////////////////////////////////////////////////////////
 
             //Task-13 Triangle Type Classifier
-            Console.WriteLine("Enter the length of side 1: ");
-            double side1 = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the length of side 1: ");
+            //double side1 = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the length of side 2: ");
-            double side2 = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the length of side 2: ");
+            //double side2 = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the length of side 3: ");
-            double side3 = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the length of side 3: ");
+            //double side3 = double.Parse(Console.ReadLine());
 
-            if ((side1 + side2) > side3)
+            //if ((side1 + side2) > side3)
+            //{
+            //    Console.WriteLine("The triangle is valid.");
+
+            //    if (side1 == side2 && side2 == side3 && side3 == side1)
+            //    {
+            //        Console.WriteLine("The type of the triangle is Equilateral");
+            //    }
+            //    else if (side1 == side2 || side2 == side3 || side3 == side1)
+            //    {
+            //        Console.WriteLine("The type of the triangle is Isosceles");
+            //    }
+            //    if (side1 != side2 && side2 != side3 && side3 != side1)
+            //    {
+            //        Console.WriteLine("The type of the triangle is Scalene");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The triangle is not valid.");
+            //}
+            ///////////////////////////////////////////////////////////
+
+            //Task-14 Online store checkout 
+            Console.WriteLine("Enter a product code (1, 2, 3): ");
+            int productCode = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the number of products you want to buy: ");
+            int quantity = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Do you have discount coupon? (yes/no): ");
+            string coupon = Console.ReadLine();
+
+            bool hasCoupon = coupon == "yes";
+
+            switch (productCode)
             {
-                Console.WriteLine("The triangle is valid.");
+                case 1:
+                    Console.WriteLine("you selected a Headphone. the unit price is 8.500 OMR");
+                    double subtotal1 = quantity * 8.500;
+                    Console.WriteLine("the subtotal is " + subtotal1 + "OMR");
 
-                if (side1 == side2 && side2 == side3 && side3 == side1)
-                {
-                    Console.WriteLine("The type of the triangle is Equilateral");
-                }
-                else if (side1 == side2 || side2 == side3 || side3 == side1)
-                {
-                    Console.WriteLine("The type of the triangle is Isosceles");
-                }
-                if (side1 != side2 && side2 != side3 && side3 != side1)
-                {
-                    Console.WriteLine("The type of the triangle is Scalene");
-                }
+                    if (subtotal1 >= 20 && hasCoupon == true)
+                    {
+                        Console.WriteLine("You have a 10% discount");
+                        Console.WriteLine("the tax is 5%");
+                        double afterDiscount = subtotal1 - (subtotal1 * 0.10);
+                        double afterTax = afterDiscount + (afterDiscount * 0.05);
+                        Console.WriteLine("the total after discount is " + afterDiscount + "OMR");
+                        Console.WriteLine("the final total after appling the tax is " + afterTax + "OMR");
+                    }
+                    else 
+                    {
+                        Console.WriteLine("No discount");
+                    }
+
+                    break;
+
+                case 2:
+                    Console.WriteLine("you selected a Keyboard. the unit price is 12.000 OMR");
+                    double subtotal2 = quantity * 12.000;
+                    Console.WriteLine("the subtotal is " + subtotal2 + "OMR");
+
+                    if (subtotal2 >= 20 && hasCoupon == true)
+                    {
+                        Console.WriteLine("You have a 10% discount");
+                        Console.WriteLine("the tax is 5%");
+                        double afterDiscount = subtotal2 - (subtotal2 * 0.10);
+                        double afterTax = afterDiscount + (afterDiscount * 0.05);
+                        Console.WriteLine("the total after discount is " + afterDiscount + "OMR");
+                        Console.WriteLine("the final total after appling the tax is " + afterTax + "OMR");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No discount");
+                    }
+                    break;
+
+                case 3:
+                    Console.WriteLine("you selected a Mouse. the unit price is 5.000 OMR");
+                    double subtotal3 = quantity * 5.000;
+                    Console.WriteLine("the subtotal is " + subtotal3 + "OMR");
+
+                    if (subtotal3 >= 20 && hasCoupon == true)
+                    {
+                        Console.WriteLine("You have a 10% discount");
+                        Console.WriteLine("the tax is 5%");
+                        double afterDiscount = subtotal3 - (subtotal3 * 0.10);
+                        double afterTax = afterDiscount + (afterDiscount * 0.05);
+                        Console.WriteLine("the total after discount is " + afterDiscount + "OMR");
+                        Console.WriteLine("the final total after appling the tax is " + afterTax + "OMR");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No discount");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid product code");
+                    break;
             }
-            else
-            {
-                Console.WriteLine("The triangle is not valid.");
-            }
-            
         }
     }
 }
