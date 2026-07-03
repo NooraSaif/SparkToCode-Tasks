@@ -90,36 +90,53 @@ namespace Test2Solution
 
             //Task-7 Repeated Menu with Exit Options
 
-            bool keepRunning = true;
+            //bool keepRunning = true;
 
-            while (keepRunning)
+            //while (keepRunning)
+            //{
+            //    Console.WriteLine("Menu option: ");
+            //    Console.WriteLine("1: say hello ");
+            //    Console.WriteLine("2: show current time-of-day greeting ");
+            //    Console.WriteLine("3: Exit");
+            //    int userInpute = int.Parse(Console.ReadLine());
+
+            //    switch (userInpute)
+            //    {
+            //        case 1:
+            //            Console.WriteLine("Hello!");
+            //            break;
+
+            //        case 2:
+            //            Console.WriteLine("Good morning!");
+            //            break;
+
+            //        case 3:
+            //            Console.WriteLine("Exiting the program.");
+            //            keepRunning = false;
+            //            break;
+
+            //        default:
+            //            Console.WriteLine("Invalid choice. Please try again.");
+            //            break;
+            //    }
+            //}
+            ////////////////////////////////////////////////////////////
+
+            //Task-8 Sum of Even Numbers only 
+            Console.WriteLine("Enter a positive whole number");
+            int n = int.Parse(Console.ReadLine());
+
+            int sum = 0;    
+
+            for (int i = 1; i <= n; i++)
             {
-                Console.WriteLine("Menu option: ");
-                Console.WriteLine("1: say hello ");
-                Console.WriteLine("2: show current time-of-day greeting ");
-                Console.WriteLine("3: Exit");
-                int userInpute = int.Parse(Console.ReadLine());
-
-                switch (userInpute)
+                if (i % 2 == 0)
                 {
-                    case 1:
-                        Console.WriteLine("Hello!");
-                        break;
-
-                    case 2:
-                        Console.WriteLine("Good morning!");
-                        break;
-
-                    case 3:
-                        Console.WriteLine("Exiting the program.");
-                        keepRunning = false;
-                        break;
-
-                    default:
-                        Console.WriteLine("Invalid choice. Please try again.");
-                        break;
+                    sum += i;
                 }
+
             }
+            Console.WriteLine($"The sum from 1 to " + n + " is: " + sum);
         }
     }
 }
