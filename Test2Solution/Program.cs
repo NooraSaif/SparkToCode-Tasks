@@ -58,35 +58,68 @@ namespace Test2Solution
             //////////////////////////////////////////////////////
 
             //Task-5 Number Guessing Game
-            int secretNumber = 42;
-            int userGuess;
-            int counter = 0;
+            //int secretNumber = 42;
+            //int userGuess;
+            //int counter = 0;
 
-            do
+            //do
+            //{
+            //    Console.WriteLine("Enter your guess number");
+            //    userGuess = int.Parse(Console.ReadLine());
+            //    counter++;
+
+            //    if (userGuess < secretNumber)
+            //    {
+            //        Console.WriteLine("Too low!");
+            //    }
+            //    else if (userGuess > secretNumber)
+            //    {
+            //        Console.WriteLine("Too high!");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Correct!");
+            //        break;
+            //    }
+
+            //} while (userGuess != secretNumber); 
+            //{ 
+            //    Console.WriteLine($"You guessed the number in {counter} attempts.");
+            //}
+            /////////////////////////////////////////////////
+
+            //Task-7 Repeated Menu with Exit Options
+
+            bool keepRunning = true;
+
+            while (keepRunning)
             {
-                Console.WriteLine("Enter your guess number");
-                userGuess = int.Parse(Console.ReadLine());
-                counter++;
+                Console.WriteLine("Menu option: ");
+                Console.WriteLine("1: say hello ");
+                Console.WriteLine("2: show current time-of-day greeting ");
+                Console.WriteLine("3: Exit");
+                int userInpute = int.Parse(Console.ReadLine());
 
-                if (userGuess < secretNumber)
+                switch (userInpute)
                 {
-                    Console.WriteLine("Too low!");
-                }
-                else if (userGuess > secretNumber)
-                {
-                    Console.WriteLine("Too high!");
-                }
-                else
-                {
-                    Console.WriteLine("Correct!");
-                    break;
-                }
+                    case 1:
+                        Console.WriteLine("Hello!");
+                        break;
 
-            } while (userGuess != secretNumber); 
-            { 
-                Console.WriteLine($"You guessed the number in {counter} attempts.");
+                    case 2:
+                        Console.WriteLine("Good morning!");
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Exiting the program.");
+                        keepRunning = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
             }
-            
         }
     }
 }
