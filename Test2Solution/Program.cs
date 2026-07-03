@@ -1,4 +1,6 @@
-﻿namespace Test2Solution
+﻿using System.ComponentModel;
+
+namespace Test2Solution
 {
     internal class Program
     {
@@ -29,14 +31,31 @@
             ////////////////////////////////////////
 
             //Task-3 Mutiplication Table
-            Console.WriteLine("Enter a number");
-            int n = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a number");
+            //int n = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= 10; i++)
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    int result = n * i;
+            //    Console.WriteLine(n + "*" + i + "=" + result);
+            //}
+            //////////////////////////////////////////
+
+            //Task-4 passwored retry
+
+            string passwored = "Spark2026";
+
+            Console.WriteLine("Enter Your passwored");
+            string userInpute = Console.ReadLine();
+
+            while (passwored != userInpute)
             {
-                int result = n * i;
-                Console.WriteLine(n + "*" + i + "=" + result);
+                Console.WriteLine("Incorrect passwored, please try again");
+                Console.WriteLine("Enter Your passwored");
+                userInpute = Console.ReadLine();
             }
+            Console.WriteLine("Access Granted");
+
         }
     }
 }
