@@ -43,19 +43,50 @@ namespace Test2Solution
 
             //Task-4 passwored retry
 
-            string passwored = "Spark2026";
+            //string passwored = "Spark2026";
 
-            Console.WriteLine("Enter Your passwored");
-            string userInpute = Console.ReadLine();
+            //Console.WriteLine("Enter Your passwored");
+            //string userInpute = Console.ReadLine();
 
-            while (passwored != userInpute)
+            //while (passwored != userInpute)
+            //{
+            //    Console.WriteLine("Incorrect passwored, please try again");
+            //    Console.WriteLine("Enter Your passwored");
+            //    userInpute = Console.ReadLine();
+            //}
+            //Console.WriteLine("Access Granted");
+            //////////////////////////////////////////////////////
+
+            //Task-5 Number Guessing Game
+            int secretNumber = 42;
+            int userGuess;
+            int counter = 0;
+
+            do
             {
-                Console.WriteLine("Incorrect passwored, please try again");
-                Console.WriteLine("Enter Your passwored");
-                userInpute = Console.ReadLine();
-            }
-            Console.WriteLine("Access Granted");
+                Console.WriteLine("Enter your guess number");
+                userGuess = int.Parse(Console.ReadLine());
+                counter++;
 
+                if (userGuess < secretNumber)
+                {
+                    Console.WriteLine("Too low!");
+                }
+                else if (userGuess > secretNumber)
+                {
+                    Console.WriteLine("Too high!");
+                }
+                else
+                {
+                    Console.WriteLine("Correct!");
+                    break;
+                }
+
+            } while (userGuess != secretNumber); 
+            { 
+                Console.WriteLine($"You guessed the number in {counter} attempts.");
+            }
+            
         }
     }
 }
