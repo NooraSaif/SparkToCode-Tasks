@@ -16,15 +16,26 @@
             /////////////////////////////////////////
 
             //Task-2 Sum of number 1 to N
-            Console.WriteLine("Enter a positive whole number");
+            //Console.WriteLine("Enter a positive whole number");
+            //int n = int.Parse(Console.ReadLine());
+
+            //int Sum = 0;
+
+            //for (int i = 1; i <= n; i++)
+            //{
+            //    Sum = Sum + i;
+            //    Console.WriteLine(Sum);
+            //}
+            ////////////////////////////////////////
+
+            //Task-3 Mutiplication Table
+            Console.WriteLine("Enter a number");
             int n = int.Parse(Console.ReadLine());
 
-            int Sum = 0;
-
-            for (int i = 1; i <= n; i++)
+            for (int i = 1; i <= 10; i++)
             {
-                Sum = Sum + i;
-                Console.WriteLine(Sum);
+                int result = n * i;
+                Console.WriteLine(n + "*" + i + "=" + result);
             }
         }
     }
