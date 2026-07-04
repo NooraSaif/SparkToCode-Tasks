@@ -169,46 +169,170 @@ namespace Test2Solution
             /////////////////////////////////////////////////////////////////////
 
             //Task-9 Validated positive number input
-            
-            int userInpute = 0; // declere the variable outside the loop to use it later in for loop
-            bool isValidInput = false;
-            
 
-            do
+            //int userInpute = 0; // declere the variable outside the loop to use it later in for loop
+            //bool isValidInput = false;
+
+
+            //do
+            //{
+            //    // to handel string input and other invalid inputs
+            //    try
+            //    {
+            //        Console.WriteLine("Enter a positive whole number");
+            //        userInpute = int.Parse(Console.ReadLine());
+
+            //        // to handle if user enters a negative number or zero
+            //        if (userInpute <= 0)
+            //        {
+            //            Console.WriteLine("Invalid input. Please enter a positive whole number.");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine($"You entered a valid positive whole number: " + userInpute);
+            //            isValidInput = true; 
+            //        }
+
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.Message);
+            //    }
+
+            //// this will keep looping until the user enters a valid positive whole number (until its true)
+            //} while (isValidInput == false);
+
+            //int total = 0;
+
+            //for (int i = 1; i <= userInpute; i++)
+            //{
+            //    total = total + i;
+            //    Console.WriteLine(total);
+            //}
+
+            /////////////////////////////////////////////////////////////////////////////////////
+
+            //Task-10 Simple ATM sitmulation
+
+            // fixed correct PIN and starting balance
+            int correstPIN = 1234;
+            double startingBalance = 100.000; 
+
+            int maxAttempts = 3;
+            int userInput = 0;
+
+            // PIN entry loop up to 3 attempts
+            for (int attempt = 1; attempt <= maxAttempts; attempt++)
             {
-                // to handel string input and other invalid inputs
                 try
                 {
-                    Console.WriteLine("Enter a positive whole number");
-                    userInpute = int.Parse(Console.ReadLine());
+                    Console.Write("Enter your 4-digit PIN: ");
+                    userInput = Convert.ToInt32(Console.ReadLine());
 
-                    // to handle if user enters a negative number or zero
-                    if (userInpute <= 0)
+                    if (userInput == correstPIN)
                     {
-                        Console.WriteLine("Invalid input. Please enter a positive whole number.");
+                        Console.WriteLine("PIN accepted! Welcome to your account.");
+                        break; // Exit the loop
                     }
                     else
                     {
-                        Console.WriteLine($"You entered a valid positive whole number: " + userInpute);
-                        isValidInput = true; 
+                        Console.WriteLine("Incorrect PIN. Attempts remaining: " + (maxAttempts - attempt));
                     }
-
                 }
-                catch (Exception ex)
+                catch (Exception x)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(x.Message);
+                    Console.WriteLine("Attempts remaining: " + (maxAttempts - attempt));
                 }
-
-            // this will keep looping until the user enters a valid positive whole number (until its true)
-            } while (isValidInput == false);
-
-            int total = 0;
-
-            for (int i = 1; i <= userInpute; i++)
-            {
-                total = total + i;
-                Console.WriteLine(total);
             }
+
+            // If user failed all 3 attempts, stop the program
+            if (userInput != correstPIN)
+            {
+                Console.WriteLine("Card Blocked");
+                return; // Stop the program completly
+            }
+
+            // Repeating ATM Menu Loop after successful PIN entry
+            bool keepRunning = true;
+            string choice;
+
+            while (keepRunning)
+            {
+                Console.WriteLine("--- ATM MENU ---");
+                Console.WriteLine("1) Deposit");
+                Console.WriteLine("2) Withdraw");
+                Console.WriteLine("3) Check Balance");
+                Console.WriteLine("4) Exit");
+                Console.WriteLine("Choose an option (1-4): ");
+
+                choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1": //Deposit - Add to balance
+                        try
+                        {
+                            Console.Write("Enter deposit amount (OMR): ");
+                            double depositAmount = double.Parse(Console.ReadLine());
+
+                            if (depositAmount <= 0)
+                            {
+                                Console.WriteLine("Error: Deposit amount must be positive number.");
+                            }
+                            else
+                            {
+                                startingBalance += depositAmount;
+                                Console.WriteLine("Current Balance: " + startingBalance + " OMR");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Error: non-numeric input.");
+                        }
+                        break;
+
+                    case "2": // Withdraw - Subtract from balance
+                        try
+                        {
+                            Console.Write("Enter withdrawal amount (OMR): ");
+                            double withdrawAmount = double.Parse(Console.ReadLine());
+
+                            if (withdrawAmount <= 0)
+                            {
+                                Console.WriteLine("Error: Withdrawal amount must be positive number.");
+                            }
+                            else if (withdrawAmount > startingBalance)
+                            {
+                                Console.WriteLine("Error: it is grater than your current balence. Your balance is " + startingBalance + " OMR.");
+                            }
+                                else
+                            {
+                                startingBalance -= withdrawAmount; 
+                                Console.WriteLine("Current Balance: " + startingBalance + " OMR");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Error: non-numeric input.");
+                        }
+                        break;
+
+                    case "3": // Check Balance
+                        Console.WriteLine("Your current balance is: " + startingBalance + " OMR");
+                        break;
+
+                    case "4": // Exit
+                        Console.WriteLine("Goodbye!");
+                        keepRunning = false; 
+                        break;
+
+                    default: 
+                        Console.WriteLine("Invalid choice. Please enter a number between 1 and 4");
+                        break;
+                }
+            }
+
         }
     }
 }
