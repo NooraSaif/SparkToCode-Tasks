@@ -88,6 +88,26 @@ namespace Test2Solution
             //}
             /////////////////////////////////////////////////
 
+            //Task-6 Safe division calculator
+            try
+            {
+                Console.WriteLine("Enter the first number");
+                double num1 = double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter the second number");
+                double num2 = double.Parse(Console.ReadLine());
+
+                double result = num1 / num2;
+
+                Console.WriteLine($"The result of {num1} divided by {num2} is: {result}");
+
+            } 
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            /////////////////////////////////////////////////
             //Task-7 Repeated Menu with Exit Options
 
             //bool keepRunning = true;
@@ -123,20 +143,24 @@ namespace Test2Solution
             ////////////////////////////////////////////////////////////
 
             //Task-8 Sum of Even Numbers only 
-            Console.WriteLine("Enter a positive whole number");
-            int n = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a positive whole number");
+            //int n = int.Parse(Console.ReadLine());
 
-            int sum = 0;    
+            //int sum = 0;    
 
-            for (int i = 1; i <= n; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    sum += i;
-                }
+            //for (int i = 1; i <= n; i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        sum += i;
+            //    }
 
-            }
-            Console.WriteLine($"The sum from 1 to " + n + " is: " + sum);
+            //}
+            //Console.WriteLine($"The sum from 1 to " + n + " is: " + sum);
+            /////////////////////////////////////////////////////////////////////
+
+
+
         }
     }
 }
