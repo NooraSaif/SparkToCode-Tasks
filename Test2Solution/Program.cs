@@ -110,52 +110,52 @@ namespace Test2Solution
             /////////////////////////////////////////////////
             //Task-7 Repeated Menu with Exit Options
 
-            bool keepRunning = true;
-            int userInpute;
+            //bool keepRunning = true;
+            //int userInpute;
 
-            while (keepRunning)
-            {
-                try 
-                {
-                    Console.WriteLine("Menu option: ");
-                    Console.WriteLine("1: say hello ");
-                    Console.WriteLine("2: show current time-of-day greeting ");
-                    Console.WriteLine("3: Exit");
-                    userInpute = int.Parse(Console.ReadLine());
+            //while (keepRunning)
+            //{
+            //    try 
+            //    {
+            //        Console.WriteLine("Menu option: ");
+            //        Console.WriteLine("1: say hello ");
+            //        Console.WriteLine("2: show current time-of-day greeting ");
+            //        Console.WriteLine("3: Exit");
+            //        userInpute = int.Parse(Console.ReadLine());
 
-                    switch (userInpute)
-                    {
-                        case 1:
-                            Console.WriteLine("Hello!");
-                            break;
+            //        switch (userInpute)
+            //        {
+            //            case 1:
+            //                Console.WriteLine("Hello!");
+            //                break;
 
-                        case 2:
-                            Console.WriteLine("Good morning!");
-                            break;
+            //            case 2:
+            //                Console.WriteLine("Good morning!");
+            //                break;
 
-                        case 3:
-                            Console.WriteLine("Exiting the program.");
-                            keepRunning = false;
-                            break;
+            //            case 3:
+            //                Console.WriteLine("Exiting the program.");
+            //                keepRunning = false;
+            //                break;
 
-                        default:
-                            Console.WriteLine("Invalid choice. Please try again.");
-                            break;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Invalid input. Please enter a number from the menu options.");
-                    Console.WriteLine(ex.Message);
-                }
-            }
+            //            default:
+            //                Console.WriteLine("Invalid choice. Please try again.");
+            //                break;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine("Invalid input. Please enter a number from the menu options.");
+            //        Console.WriteLine(ex.Message);
+            //    }
+            //}
             ////////////////////////////////////////////////////////////
 
-            //Task-8 Sum of Even Numbers only 
+            //Task - 8 Sum of Even Numbers only
             //Console.WriteLine("Enter a positive whole number");
             //int n = int.Parse(Console.ReadLine());
 
-            //int sum = 0;    
+            //int sum = 0;
 
             //for (int i = 1; i <= n; i++)
             //{
@@ -168,8 +168,47 @@ namespace Test2Solution
             //Console.WriteLine($"The sum from 1 to " + n + " is: " + sum);
             /////////////////////////////////////////////////////////////////////
 
+            //Task-9 Validated positive number input
+            
+            int userInpute = 0; // declere the variable outside the loop to use it later in for loop
+            bool isValidInput = false;
+            
 
+            do
+            {
+                // to handel string input and other invalid inputs
+                try
+                {
+                    Console.WriteLine("Enter a positive whole number");
+                    userInpute = int.Parse(Console.ReadLine());
 
+                    // to handle if user enters a negative number or zero
+                    if (userInpute <= 0)
+                    {
+                        Console.WriteLine("Invalid input. Please enter a positive whole number.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"You entered a valid positive whole number: " + userInpute);
+                        isValidInput = true; 
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            // this will keep looping until the user enters a valid positive whole number (until its true)
+            } while (isValidInput == false);
+
+            int total = 0;
+
+            for (int i = 1; i <= userInpute; i++)
+            {
+                total = total + i;
+                Console.WriteLine(total);
+            }
         }
     }
 }
