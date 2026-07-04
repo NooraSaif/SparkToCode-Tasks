@@ -89,57 +89,66 @@ namespace Test2Solution
             /////////////////////////////////////////////////
 
             //Task-6 Safe division calculator
-            try
-            {
-                Console.WriteLine("Enter the first number");
-                double num1 = double.Parse(Console.ReadLine());
+            //try
+            //{
+            //    Console.WriteLine("Enter the first number");
+            //    double num1 = double.Parse(Console.ReadLine());
 
-                Console.WriteLine("Enter the second number");
-                double num2 = double.Parse(Console.ReadLine());
+            //    Console.WriteLine("Enter the second number");
+            //    double num2 = double.Parse(Console.ReadLine());
 
-                double result = num1 / num2;
+            //    double result = num1 / num2;
 
-                Console.WriteLine($"The result of {num1} divided by {num2} is: {result}");
+            //    Console.WriteLine($"The result of {num1} divided by {num2} is: {result}");
 
-            } 
-            catch (Exception ex) 
-            {
-                Console.WriteLine(ex.Message);
-            }
+            //} 
+            //catch (Exception ex) 
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
 
             /////////////////////////////////////////////////
             //Task-7 Repeated Menu with Exit Options
 
-            //bool keepRunning = true;
+            bool keepRunning = true;
+            int userInpute;
 
-            //while (keepRunning)
-            //{
-            //    Console.WriteLine("Menu option: ");
-            //    Console.WriteLine("1: say hello ");
-            //    Console.WriteLine("2: show current time-of-day greeting ");
-            //    Console.WriteLine("3: Exit");
-            //    int userInpute = int.Parse(Console.ReadLine());
+            while (keepRunning)
+            {
+                try 
+                {
+                    Console.WriteLine("Menu option: ");
+                    Console.WriteLine("1: say hello ");
+                    Console.WriteLine("2: show current time-of-day greeting ");
+                    Console.WriteLine("3: Exit");
+                    userInpute = int.Parse(Console.ReadLine());
 
-            //    switch (userInpute)
-            //    {
-            //        case 1:
-            //            Console.WriteLine("Hello!");
-            //            break;
+                    switch (userInpute)
+                    {
+                        case 1:
+                            Console.WriteLine("Hello!");
+                            break;
 
-            //        case 2:
-            //            Console.WriteLine("Good morning!");
-            //            break;
+                        case 2:
+                            Console.WriteLine("Good morning!");
+                            break;
 
-            //        case 3:
-            //            Console.WriteLine("Exiting the program.");
-            //            keepRunning = false;
-            //            break;
+                        case 3:
+                            Console.WriteLine("Exiting the program.");
+                            keepRunning = false;
+                            break;
 
-            //        default:
-            //            Console.WriteLine("Invalid choice. Please try again.");
-            //            break;
-            //    }
-            //}
+                        default:
+                            Console.WriteLine("Invalid choice. Please try again.");
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Invalid input. Please enter a number from the menu options.");
+                    Console.WriteLine(ex.Message);
+                }
+            }
             ////////////////////////////////////////////////////////////
 
             //Task-8 Sum of Even Numbers only 
