@@ -68,23 +68,42 @@ namespace Task3Functions
             //////////////////////////////////////////////////////////
 
             //Task 6 - Password Strength Checker
-            Console.WriteLine("Enter password: ");
-            string passwored = Console.ReadLine();
+            //Console.WriteLine("Enter password: ");
+            //string passwored = Console.ReadLine();
 
-            int lenght = passwored.Length;
-            bool contains = passwored.Contains("passwored");
+            //int lenght = passwored.Length;
+            //bool contains = passwored.Contains("passwored");
 
-            if (lenght >= 8 && contains == false)
-            {
-                Console.WriteLine("Strong password");
-            }
-            else
-            {
-                Console.WriteLine("Weak password");
-            }
+            //if (lenght >= 8 && contains == false)
+            //{
+            //    Console.WriteLine("Strong password");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Weak password");
+            //}
             /////////////////////////////////////////////////////////
-            
 
+            //Task 7 - Clean Name Comparator
+
+            Console.WriteLine("Enter your name: ");
+            string name1 = Console.ReadLine();
+
+            Console.WriteLine("Confirm your name: ");
+            string name2 = Console.ReadLine();
+
+            string trimmed1 = name1.Trim();
+            string trimmed2 = name2.Trim();
+
+            if (trimmed1.ToUpper() == trimmed2.ToUpper()) 
+            {
+                Console.WriteLine("Names match");
+            }
+            else 
+            { 
+                Console.WriteLine("Names do not match"); 
+            }
+            ///////////////////////////////////////////////
         }
     }
 }
