@@ -52,7 +52,7 @@ namespace Task3Functions
             //Console.WriteLine("Enter your exam score as a decimal number: ");
             //double num = double.Parse(Console.ReadLine());
 
-            //double wholeNumber = Math.Round(num, 0);
+            //double wholeNumber = Math.Round(num);
 
             //Console.WriteLine("Your rounded score is: " + wholeNumber);
 
@@ -106,24 +106,40 @@ namespace Task3Functions
             ///////////////////////////////////////////////
 
             //Task 8 - Membership Expiry Checker
-            Console.WriteLine("Enter your membership start date: (y-m-d) ");
-            string startDay = Console.ReadLine();
+            //Console.WriteLine("Enter your membership start date: (y-m-d) ");
+            //string startDay = Console.ReadLine();
 
-            Console.WriteLine("Enter the number of valid membership days: ");
-            int validDays = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the number of valid membership days: ");
+            //int validDays = int.Parse(Console.ReadLine());
 
-            DateTime parsedDate = DateTime.Parse(startDay);
-            DateTime expiryDate = parsedDate.AddDays(validDays);
+            //DateTime parsedDate = DateTime.Parse(startDay);
+            //DateTime expiryDate = parsedDate.AddDays(validDays);
 
-            if (DateTime.Now > expiryDate)
-            {
-                Console.WriteLine("Membership has expired.");
-            }
-            else
-            {
-                Console.WriteLine("Membership is Active.");
-            }
+            //if (DateTime.Now > expiryDate)
+            //{
+            //    Console.WriteLine("Membership has expired.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Membership is Active.");
+            //}
             /////////////////////////////////////////////////////////////////
+
+            //Task 9 - Round Up / Round Down Explorer
+
+            Console.WriteLine("Enter a decimal number: ");
+            double num = double.Parse(Console.ReadLine());
+
+            double wholeNumber = Math.Round(num);
+            double roundedUp = Math.Ceiling(num);
+            double roundedDown = Math.Floor(num);
+
+            Console.WriteLine("Original number: " + num);
+            Console.WriteLine("Rounded to the nearest whole number: " + wholeNumber);
+            Console.WriteLine("always rounded up: " + roundedUp);
+            Console.WriteLine("always rounded down: " + roundedDown);
+            //////////////////////////////////////////////////////////////////
+
         }
     }
 }
