@@ -38,15 +38,34 @@ namespace Task3Functions
             //////////////////////////////////////////////////////
 
             //Task 4 - Subscription End Date
-            Console.WriteLine("enter the number of days of a free trial: ");
-            int freeTrialDays = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("enter the number of days of a free trial: ");
+            //int freeTrialDays = Convert.ToInt32(Console.ReadLine());
 
-            DateTime today = DateTime.Today;
-            DateTime endate = today.AddDays(freeTrialDays);
+            //DateTime today = DateTime.Today;
+            //DateTime endate = today.AddDays(freeTrialDays);
 
-            Console.WriteLine("Today is :" + today.ToString("dd/MM/yyyy"));
-            Console.WriteLine("The free trial will end on: " + endate.ToString("dd/MM/yyyy"));
+            //Console.WriteLine("Today is :" + today.ToString("dd/MM/yyyy"));
+            //Console.WriteLine("The free trial will end on: " + endate.ToString("dd/MM/yyyy"));
             //////////////////////////////////////////////////////////////
+
+            //Task 5 - Grade Rounding System
+            Console.WriteLine("Enter your exam score as a decimal number: ");
+            double num = double.Parse(Console.ReadLine());
+
+            double wholeNumber = Math.Round(num, 0);
+
+            Console.WriteLine("Your rounded score is: " + wholeNumber);
+
+            if (wholeNumber >= 60)
+            {
+                Console.WriteLine("Pass");
+            }
+            else
+            {
+                Console.WriteLine("Fail");
+
+            }
+            //////////////////////////////////////////////////////////
             
 
         }
