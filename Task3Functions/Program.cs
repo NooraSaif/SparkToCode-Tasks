@@ -1,4 +1,6 @@
-﻿namespace Task3Functions
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Task3Functions
 {
     internal class Program
     {
@@ -27,13 +29,24 @@
             ///////////////////////////////////////////////////////////////
 
             //Task 3 - Name Formatter
-            Console.WriteLine("Enter your full name: ");
-            string UserName = Console.ReadLine();
+            //Console.WriteLine("Enter your full name: ");
+            //string UserName = Console.ReadLine();
 
-            Console.WriteLine("Your name in uppercase: " + UserName.ToUpper());
-            Console.WriteLine("Your name in lowercase: " + UserName.ToLower());
-            Console.WriteLine("the number of characters in your name is: " + UserName.Length);
+            //Console.WriteLine("Your name in uppercase: " + UserName.ToUpper());
+            //Console.WriteLine("Your name in lowercase: " + UserName.ToLower());
+            //Console.WriteLine("the number of characters in your name is: " + UserName.Length);
             //////////////////////////////////////////////////////
+
+            //Task 4 - Subscription End Date
+            Console.WriteLine("enter the number of days of a free trial: ");
+            int freeTrialDays = Convert.ToInt32(Console.ReadLine());
+
+            DateTime today = DateTime.Today;
+            DateTime endate = today.AddDays(freeTrialDays);
+
+            Console.WriteLine("Today is :" + today.ToString("dd/MM/yyyy"));
+            Console.WriteLine("The free trial will end on: " + endate.ToString("dd/MM/yyyy"));
+            //////////////////////////////////////////////////////////////
             
 
         }
