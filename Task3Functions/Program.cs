@@ -49,23 +49,40 @@ namespace Task3Functions
             //////////////////////////////////////////////////////////////
 
             //Task 5 - Grade Rounding System
-            Console.WriteLine("Enter your exam score as a decimal number: ");
-            double num = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your exam score as a decimal number: ");
+            //double num = double.Parse(Console.ReadLine());
 
-            double wholeNumber = Math.Round(num, 0);
+            //double wholeNumber = Math.Round(num, 0);
 
-            Console.WriteLine("Your rounded score is: " + wholeNumber);
+            //Console.WriteLine("Your rounded score is: " + wholeNumber);
 
-            if (wholeNumber >= 60)
+            //if (wholeNumber >= 60)
+            //{
+            //    Console.WriteLine("Pass");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Fail");
+
+            //}
+            //////////////////////////////////////////////////////////
+
+            //Task 6 - Password Strength Checker
+            Console.WriteLine("Enter password: ");
+            string passwored = Console.ReadLine();
+
+            int lenght = passwored.Length;
+            bool contains = passwored.Contains("passwored");
+
+            if (lenght >= 8 && contains == false)
             {
-                Console.WriteLine("Pass");
+                Console.WriteLine("Strong password");
             }
             else
             {
-                Console.WriteLine("Fail");
-
+                Console.WriteLine("Weak password");
             }
-            //////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////
             
 
         }
