@@ -86,24 +86,44 @@ namespace Task3Functions
 
             //Task 7 - Clean Name Comparator
 
-            Console.WriteLine("Enter your name: ");
-            string name1 = Console.ReadLine();
+            //Console.WriteLine("Enter your name: ");
+            //string name1 = Console.ReadLine();
 
-            Console.WriteLine("Confirm your name: ");
-            string name2 = Console.ReadLine();
+            //Console.WriteLine("Confirm your name: ");
+            //string name2 = Console.ReadLine();
 
-            string trimmed1 = name1.Trim();
-            string trimmed2 = name2.Trim();
+            //string trimmed1 = name1.Trim();
+            //string trimmed2 = name2.Trim();
 
-            if (trimmed1.ToUpper() == trimmed2.ToUpper()) 
-            {
-                Console.WriteLine("Names match");
-            }
-            else 
-            { 
-                Console.WriteLine("Names do not match"); 
-            }
+            //if (trimmed1.ToUpper() == trimmed2.ToUpper()) 
+            //{
+            //    Console.WriteLine("Names match");
+            //}
+            //else 
+            //{ 
+            //    Console.WriteLine("Names do not match"); 
+            //}
             ///////////////////////////////////////////////
+
+            //Task 8 - Membership Expiry Checker
+            Console.WriteLine("Enter your membership start date: (y-m-d) ");
+            string startDay = Console.ReadLine();
+
+            Console.WriteLine("Enter the number of valid membership days: ");
+            int validDays = int.Parse(Console.ReadLine());
+
+            DateTime parsedDate = DateTime.Parse(startDay);
+            DateTime expiryDate = parsedDate.AddDays(validDays);
+
+            if (DateTime.Now > expiryDate)
+            {
+                Console.WriteLine("Membership has expired.");
+            }
+            else
+            {
+                Console.WriteLine("Membership is Active.");
+            }
+            /////////////////////////////////////////////////////////////////
         }
     }
 }
