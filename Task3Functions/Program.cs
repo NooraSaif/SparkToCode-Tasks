@@ -164,44 +164,62 @@ namespace Task3Functions
 
             //Task 11 One-Time Password(OTP) Generator
 
-            Random rand = new Random();
+            //Random rand = new Random();
 
-            int generateOTP = rand.Next(1000, 9999);
+            //int generateOTP = rand.Next(1000, 9999);
 
-            Console.WriteLine("Your 4-digit OTP is: " + generateOTP);
-            Console.WriteLine("-------------------------------------\n");
+            //Console.WriteLine("Your 4-digit OTP is: " + generateOTP);
+            //Console.WriteLine("-------------------------------------\n");
 
 
-            int maxAttempts = 3;
-            int userInput = 0;
+            //int maxAttempts = 3;
+            //int userInput = 0;
 
-            for (int attempt = 1; attempt <= maxAttempts; attempt++)
-            {
-                try
-                {
-                    Console.Write("Enter the OTP send to your device: ");
-                    userInput = Convert.ToInt32(Console.ReadLine());
+            //for (int attempt = 1; attempt <= maxAttempts; attempt++)
+            //{
+            //    try
+            //    {
+            //        Console.Write("Enter the OTP send to your device: ");
+            //        userInput = Convert.ToInt32(Console.ReadLine());
 
-                    if (userInput == generateOTP)
-                    {
-                        Console.WriteLine("Verified.");
-                    }
-                    
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Invalid input.");
-                }
-            }
+            //        if (userInput == generateOTP)
+            //        {
+            //            Console.WriteLine("Verified.");
+            //        }
 
-            // If user failed all 3 attempts
-            if (userInput != generateOTP)
-            {
-                Console.WriteLine("Verification Failed");
-            }
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        Console.WriteLine("Invalid input.");
+            //    }
+            //}
+
+            //// If user failed all 3 attempts
+            //if (userInput != generateOTP)
+            //{
+            //    Console.WriteLine("Verification Failed");
+            //}
             ///////////////////////////////////////////////////////////////////
-            
 
+            //Task 12 - Birthday Insights
+            Console.WriteLine("Enter your date of birth: (y-m-d) ");
+            string userInput = Console.ReadLine();
+
+            DateTime birthDay = DateTime.Parse(userInput);
+            DateTime today = DateTime.Today;
+
+            DayOfWeek birthDayOfWeek = birthDay.DayOfWeek;
+
+            int age = today.Year - birthDay.Year;
+
+            if (today.Month < birthDay.Month || (today.Month == birthDay.Month && today.Day < birthDay.Day))
+            {
+                age--;
+
+                Console.WriteLine($"You are {age} years old.");
+                Console.WriteLine($"You were born on {birthDayOfWeek}.");
+            }
+            ////////////////////////////////////////////////////////////////////
         }
     }
 }
