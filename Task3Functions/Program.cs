@@ -142,26 +142,69 @@ namespace Task3Functions
 
             //Task 10 - Word Position Finder
 
-            Console.WriteLine("Enter a sentence: ");
-            string sentence = Console.ReadLine();
+            //Console.WriteLine("Enter a sentence: ");
+            //string sentence = Console.ReadLine();
 
-            Console.WriteLine("Enter a word: ");
-            string word = Console.ReadLine();
+            //Console.WriteLine("Enter a word: ");
+            //string word = Console.ReadLine();
 
-            int firstindex = sentence.IndexOf(word);
-            int LastIndex = sentence.LastIndexOf(word);
+            //int firstindex = sentence.IndexOf(word);
+            //int LastIndex = sentence.LastIndexOf(word);
 
-            if (firstindex == -1)
-            {
-                Console.WriteLine("The word " + word + " is not found in the sentence.");
-            }
-            else
-            {
-                Console.WriteLine("The Index Value of " + word + " in the sentence is " + firstindex);
-                Console.WriteLine("The Last Index Value of " + word + " in the sentence is " + LastIndex);
-            }
+            //if (firstindex == -1)
+            //{
+            //    Console.WriteLine("The word " + word + " is not found in the sentence.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The Index Value of " + word + " in the sentence is " + firstindex);
+            //    Console.WriteLine("The Last Index Value of " + word + " in the sentence is " + LastIndex);
+            //}
             ////////////////////////////////////////////////////////////////////////////////
 
+            //Task 11 One-Time Password(OTP) Generator
+
+            Random rand = new Random();
+
+            int generateOTP = rand.Next(1000, 9999);
+
+            Console.WriteLine("Your 4-digit OTP is: " + generateOTP);
+            Console.WriteLine("-------------------------------------\n");
+
+
+            int maxAttempts = 3;
+            int userInput = 0;
+
+            for (int attempt = 1; attempt <= maxAttempts; attempt++)
+            {
+                try
+                {
+                    Console.Write("Enter the OTP send to your device: ");
+                    userInput = Convert.ToInt32(Console.ReadLine());
+
+                    if (userInput == generateOTP)
+                    {
+                        Console.WriteLine("Verified.");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect OTP. Attempts remaining: " + (maxAttempts - attempt));
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input.");
+                }
+            }
+
+            // If user failed all 3 attempts
+            if (userInput != generateOTP)
+            {
+                Console.WriteLine("Verification Failed");
+            }
+            ///////////////////////////////////////////////////////////////////
+            
         }
     }
 }
