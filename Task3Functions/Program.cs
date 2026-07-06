@@ -127,18 +127,40 @@ namespace Task3Functions
 
             //Task 9 - Round Up / Round Down Explorer
 
-            Console.WriteLine("Enter a decimal number: ");
-            double num = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a decimal number: ");
+            //double num = double.Parse(Console.ReadLine());
 
-            double wholeNumber = Math.Round(num);
-            double roundedUp = Math.Ceiling(num);
-            double roundedDown = Math.Floor(num);
+            //double wholeNumber = Math.Round(num);
+            //double roundedUp = Math.Ceiling(num);
+            //double roundedDown = Math.Floor(num);
 
-            Console.WriteLine("Original number: " + num);
-            Console.WriteLine("Rounded to the nearest whole number: " + wholeNumber);
-            Console.WriteLine("always rounded up: " + roundedUp);
-            Console.WriteLine("always rounded down: " + roundedDown);
+            //Console.WriteLine("Original number: " + num);
+            //Console.WriteLine("Rounded to the nearest whole number: " + wholeNumber);
+            //Console.WriteLine("always rounded up: " + roundedUp);
+            //Console.WriteLine("always rounded down: " + roundedDown);
             //////////////////////////////////////////////////////////////////
+
+            //Task 10 - Word Position Finder
+
+            Console.WriteLine("Enter a sentence: ");
+            string sentence = Console.ReadLine();
+
+            Console.WriteLine("Enter a word: ");
+            string word = Console.ReadLine();
+
+            int firstindex = sentence.IndexOf(word);
+            int LastIndex = sentence.LastIndexOf(word);
+
+            if (firstindex == -1)
+            {
+                Console.WriteLine("The word " + word + " is not found in the sentence.");
+            }
+            else
+            {
+                Console.WriteLine("The Index Value of " + word + " in the sentence is " + firstindex);
+                Console.WriteLine("The Last Index Value of " + word + " in the sentence is " + LastIndex);
+            }
+            ////////////////////////////////////////////////////////////////////////////////
 
         }
     }
