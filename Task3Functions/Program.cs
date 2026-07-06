@@ -185,12 +185,8 @@ namespace Task3Functions
                     if (userInput == generateOTP)
                     {
                         Console.WriteLine("Verified.");
-                        break;
                     }
-                    else
-                    {
-                        Console.WriteLine("Incorrect OTP. Attempts remaining: " + (maxAttempts - attempt));
-                    }
+                    
                 }
                 catch (FormatException)
                 {
@@ -205,6 +201,7 @@ namespace Task3Functions
             }
             ///////////////////////////////////////////////////////////////////
             
+
         }
     }
 }
