@@ -1,4 +1,6 @@
-﻿using System.Xml.Linq;
+﻿using System.Drawing;
+using System.Reflection.Metadata;
+using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Task4Solution
@@ -38,6 +40,19 @@ namespace Task4Solution
         {
             return number % 2 == 0;
         }
+
+        //Task 6 - Rectangle Area &Perimeter Functions
+        //double return and two double parameters
+        public static double CalculateArea(double width, double lenght)
+        {
+            return width * lenght;
+        }
+        public static double CalculatePerimeter(double width, double lenght)
+        {
+            return 2 * (width + lenght);
+        }
+
+
 
         static void Main(string[] args)
         {
@@ -86,9 +101,19 @@ namespace Task4Solution
                 Console.WriteLine("The number is odd.");
             }
             ////////////////////////////////////////////////////////
-            
 
-            
+            //Task 6 - Rectangle Area & Perimeter Functions
+            Console.WriteLine("Enter the width of the rectangle:");
+            double width = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter the length of the rectangle:");
+            double length = Convert.ToDouble(Console.ReadLine());
+
+            // call CalculateArea and CalculatePerimeter functions and display the results
+            Console.WriteLine($"The area of the rectangle is: {CalculateArea(width, length)}");
+            Console.WriteLine($"The perimeter of the rectangle is: {CalculatePerimeter(width, length)}");
+
+
         }
     }
 }
