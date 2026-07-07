@@ -32,38 +32,63 @@ namespace Task4Solution
             Console.WriteLine("3. Exit");
         }
 
+        //Task 5 - Even or Odd Function
+        // bool return and one int parameter
+        public static bool IsEven(int number) 
+        {
+            return number % 2 == 0;
+        }
+
         static void Main(string[] args)
         {
-            //Task 1 - Personalized Welcome Functio
-            Console.WriteLine("Enter your name:");
-            string userName = Console.ReadLine();
+            ////Task 1 - Personalized Welcome Functio
+            //Console.WriteLine("Enter your name:");
+            //string userName = Console.ReadLine();
 
-            // call PrintWelcome function
-            PrintWelcome(userName);
-            ///////////////////////////////////////////////////////
+            //// call PrintWelcome function
+            //PrintWelcome(userName);
+            /////////////////////////////////////////////////////////
 
-            //Task 2 - Square Number Function
-            Console.WriteLine("Enter a whole number to square:");
-            int num = Convert.ToInt16(Console.ReadLine());
+            ////Task 2 - Square Number Function
+            //Console.WriteLine("Enter a whole number to square:");
+            //int num = Convert.ToInt16(Console.ReadLine());
 
-            // call Square function
-            int result = Square(num);
-            Console.WriteLine($"The square of {num} is: " + result);
-            ///////////////////////////////////////////////////////
+            //// call Square function
+            //int result = Square(num);
+            //Console.WriteLine($"The square of {num} is: " + result);
+            /////////////////////////////////////////////////////////
 
-            //Task 3 - Celsius to Fahrenheit Function
-            Console.WriteLine("Enter the temperature in Celsius:");
-            double celsiuseNumber = Convert.ToDouble(Console.ReadLine());
+            ////Task 3 - Celsius to Fahrenheit Function
+            //Console.WriteLine("Enter the temperature in Celsius:");
+            //double celsiuseNumber = Convert.ToDouble(Console.ReadLine());
 
-            // call CelsiusToFahrenheit function
-            double fahrenheitResult = CelsiusToFahrenheit(celsiuseNumber);
-            Console.WriteLine($"{celsiuseNumber} Celsius is equal to {fahrenheitResult} Fahrenheit.");
-            ///////////////////////////////////////////////////////////////////////////////////////////
+            //// call CelsiusToFahrenheit function
+            //double fahrenheitResult = CelsiusToFahrenheit(celsiuseNumber);
+            //Console.WriteLine($"{celsiuseNumber} Celsius is equal to {fahrenheitResult} Fahrenheit.");
+            /////////////////////////////////////////////////////////////////////////////////////////////
 
-            //Task 4 - Fixed Menu Display Function
-            //call DisplayMenu function
-            DisplayMenu();
+            ////Task 4 - Fixed Menu Display Function
+            ////call DisplayMenu function
+            //DisplayMenu();
             ////////////////////////////////////////////////////////
+
+            //Task 5 - Even or Odd Function
+            Console.WriteLine("Enter a whole number to check if it is even:");
+            int userNumber = Convert.ToInt16(Console.ReadLine());
+
+            //call IsEven function
+            if (IsEven(userNumber) == true)
+            {
+                Console.WriteLine("The number is even.");
+            }
+            else
+            {
+                Console.WriteLine("The number is odd.");
+            }
+            ////////////////////////////////////////////////////////
+            
+
+            
         }
     }
 }
