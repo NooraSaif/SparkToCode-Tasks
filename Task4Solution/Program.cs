@@ -84,64 +84,74 @@ namespace Task4Solution
             }
         }
 
+        //Task 8 - Countdown Function
+        // Void return and one int parameter
+        public static void Countdown (int startNumber)
+        {
+            for (int i = startNumber; i >= 1; i--)
+            {
+               Console.WriteLine(i);
+            }
+        }
+
         static void Main(string[] args)
         {
-            ////Task 1 - Personalized Welcome Functio
-            //Console.WriteLine("Enter your name:");
-            //string userName = Console.ReadLine();
+            //Task 1 - Personalized Welcome Functio
+            Console.WriteLine("Enter your name:");
+            string userName = Console.ReadLine();
 
-            //// call PrintWelcome function
-            //PrintWelcome(userName);
+            // call PrintWelcome function
+            PrintWelcome(userName);
             /////////////////////////////////////////////////////////
 
-            ////Task 2 - Square Number Function
-            //Console.WriteLine("Enter a whole number to square:");
-            //int num = Convert.ToInt16(Console.ReadLine());
+            //Task 2 - Square Number Function
+            Console.WriteLine("Enter a whole number to square:");
+            int num = Convert.ToInt16(Console.ReadLine());
 
-            //// call Square function
-            //int result = Square(num);
-            //Console.WriteLine($"The square of {num} is: " + result);
-            /////////////////////////////////////////////////////////
+            // call Square function
+            int result = Square(num);
+            Console.WriteLine($"The square of {num} is: " + result);
+            ///////////////////////////////////////////////////////
 
-            ////Task 3 - Celsius to Fahrenheit Function
-            //Console.WriteLine("Enter the temperature in Celsius:");
-            //double celsiuseNumber = Convert.ToDouble(Console.ReadLine());
+            //Task 3 - Celsius to Fahrenheit Function
+            Console.WriteLine("Enter the temperature in Celsius:");
+            double celsiuseNumber = Convert.ToDouble(Console.ReadLine());
 
-            //// call CelsiusToFahrenheit function
-            //double fahrenheitResult = CelsiusToFahrenheit(celsiuseNumber);
-            //Console.WriteLine($"{celsiuseNumber} Celsius is equal to {fahrenheitResult} Fahrenheit.");
-            /////////////////////////////////////////////////////////////////////////////////////////////
+            // call CelsiusToFahrenheit function
+            double fahrenheitResult = CelsiusToFahrenheit(celsiuseNumber);
+            Console.WriteLine($"{celsiuseNumber} Celsius is equal to {fahrenheitResult} Fahrenheit.");
+            ///////////////////////////////////////////////////////////////////////////////////////////
 
-            ////Task 4 - Fixed Menu Display Function
-            ////call DisplayMenu function
-            //DisplayMenu();
+            //Task 4 - Fixed Menu Display Function
+            //call DisplayMenu function
+            DisplayMenu();
             ////////////////////////////////////////////////////////
 
             //Task 5 - Even or Odd Function
-            //Console.WriteLine("Enter a whole number to check if it is even:");
-            //int userNumber = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Enter a whole number to check if it is even:");
+            int userNumber = Convert.ToInt16(Console.ReadLine());
 
-            ////call IsEven function
-            //if (IsEven(userNumber) == true)
-            //{
-            //    Console.WriteLine("The number is even.");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("The number is odd.");
-            //}
+            //call IsEven function
+            if (IsEven(userNumber) == true)
+            {
+                Console.WriteLine("The number is even.");
+            }
+            else
+            {
+                Console.WriteLine("The number is odd.");
+            }
             //////////////////////////////////////////////////////////
 
-            ////Task 6 - Rectangle Area & Perimeter Functions
-            //Console.WriteLine("Enter the width of the rectangle:");
-            //double width = Convert.ToDouble(Console.ReadLine());
+            //Task 6 - Rectangle Area & Perimeter Functions
+            Console.WriteLine("Enter the width of the rectangle:");
+            double width = Convert.ToDouble(Console.ReadLine());
 
-            //Console.WriteLine("Enter the length of the rectangle:");
-            //double length = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the length of the rectangle:");
+            double length = Convert.ToDouble(Console.ReadLine());
 
-            //// call CalculateArea and CalculatePerimeter functions and display the results
-            //Console.WriteLine($"The area of the rectangle is: {CalculateArea(width, length)}");
-            //Console.WriteLine($"The perimeter of the rectangle is: {CalculatePerimeter(width, length)}");
+            // call CalculateArea and CalculatePerimeter functions and display the results
+            Console.WriteLine($"The area of the rectangle is: {CalculateArea(width, length)}");
+            Console.WriteLine($"The perimeter of the rectangle is: {CalculatePerimeter(width, length)}");
             /////////////////////////////////////////////////////////////////////////////////////////
 
             //Task 7 - Grade Letter Function
@@ -150,8 +160,13 @@ namespace Task4Solution
 
             Console.WriteLine($"Your grade letter is: {GetGradeLetter(userScore)}");
             ////////////////////////////////////////////////////////////////////////
-            
 
+            //Task 8 - Countdown Function
+            Console.WriteLine("Enter a number to start the countdown:");
+            int countdownStart = Convert.ToInt16(Console.ReadLine());
+
+            // call Countdown function
+            Countdown(countdownStart);
         }
     }
 }
