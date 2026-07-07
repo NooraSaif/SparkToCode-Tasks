@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Diagnostics.Metrics;
+using System.Drawing;
 using System.Reflection.Metadata;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -52,7 +53,36 @@ namespace Task4Solution
             return 2 * (width + lenght);
         }
 
+        //Task 7 - Grade Letter Function
+        //string return and one int parameter
+        public static string GetGradeLetter(int grade)
+        {
+            if (grade < 0)
+            {
+                return "Invalid grade";
+            }
+            else if (grade >= 90)
+            {
+                return "A";
 
+            }
+            else if (grade >= 80)
+            {
+                return "B";
+            }
+            else if (grade >= 70)
+            {
+                return "C";
+            }
+            else if (grade >= 60)
+            {
+                return "D";
+            }
+            else
+            {
+                return "F";
+            }
+        }
 
         static void Main(string[] args)
         {
@@ -88,31 +118,39 @@ namespace Task4Solution
             ////////////////////////////////////////////////////////
 
             //Task 5 - Even or Odd Function
-            Console.WriteLine("Enter a whole number to check if it is even:");
-            int userNumber = Convert.ToInt16(Console.ReadLine());
+            //Console.WriteLine("Enter a whole number to check if it is even:");
+            //int userNumber = Convert.ToInt16(Console.ReadLine());
 
-            //call IsEven function
-            if (IsEven(userNumber) == true)
-            {
-                Console.WriteLine("The number is even.");
-            }
-            else
-            {
-                Console.WriteLine("The number is odd.");
-            }
-            ////////////////////////////////////////////////////////
+            ////call IsEven function
+            //if (IsEven(userNumber) == true)
+            //{
+            //    Console.WriteLine("The number is even.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The number is odd.");
+            //}
+            //////////////////////////////////////////////////////////
 
-            //Task 6 - Rectangle Area & Perimeter Functions
-            Console.WriteLine("Enter the width of the rectangle:");
-            double width = Convert.ToDouble(Console.ReadLine());
+            ////Task 6 - Rectangle Area & Perimeter Functions
+            //Console.WriteLine("Enter the width of the rectangle:");
+            //double width = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter the length of the rectangle:");
-            double length = Convert.ToDouble(Console.ReadLine());
+            //Console.WriteLine("Enter the length of the rectangle:");
+            //double length = Convert.ToDouble(Console.ReadLine());
 
-            // call CalculateArea and CalculatePerimeter functions and display the results
-            Console.WriteLine($"The area of the rectangle is: {CalculateArea(width, length)}");
-            Console.WriteLine($"The perimeter of the rectangle is: {CalculatePerimeter(width, length)}");
+            //// call CalculateArea and CalculatePerimeter functions and display the results
+            //Console.WriteLine($"The area of the rectangle is: {CalculateArea(width, length)}");
+            //Console.WriteLine($"The perimeter of the rectangle is: {CalculatePerimeter(width, length)}");
+            /////////////////////////////////////////////////////////////////////////////////////////
 
+            //Task 7 - Grade Letter Function
+            Console.WriteLine("Enter your score:");
+            int userScore = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine($"Your grade letter is: {GetGradeLetter(userScore)}");
+            ////////////////////////////////////////////////////////////////////////
+            
 
         }
     }
