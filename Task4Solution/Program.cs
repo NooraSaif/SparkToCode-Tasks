@@ -94,6 +94,65 @@ namespace Task4Solution
             }
         }
 
+        //Task 9 - Overloaded Multiply Function
+        //int returns and two int parameters
+        static int Multiply(int a, int b)
+        { 
+            return a * b; 
+        }
+        // double return and two double parameters 
+        static double Multiply(double a, double b)
+        {
+            return a * b;
+        }
+        //int return and three int parameters
+        static int Multiply(int a, int b, int c)
+        {
+            return a * b * c;
+        }
+
+        //Task 10 - Overloaded Area Calculator
+        //double return and single double parameter
+        public static double CalculateArea(double side) 
+        {
+            return side * side;
+        }
+        //double return and two double parameters
+        // An error appeared becuse it had already implemented in Task 6
+
+
+        //Task 11 - Function-Based Calculator
+        static double Add(double a, double b) 
+        {
+            return a + b;
+        }
+        static double Subtract(double a, double b)
+        {
+            return a - b;
+        }
+        static double MultiplyNumbers(double a, double b)
+        {
+            return a * b;
+        }
+        static double DivideNumbers(double a, double b)
+        {
+            try
+            {
+                return a / b;
+            }
+            catch (DivideByZeroException ex) 
+            {
+                Console.WriteLine("Error: cannot divide by zero");
+                return 0;
+            }
+        }
+        static void DisplayResult(string operation, double result)
+        {
+            Console.WriteLine($"Result of {operation} is:  result");
+        }
+
+
+
         static void Main(string[] args)
         {
             //Task 1 - Personalized Welcome Functio
@@ -167,6 +226,51 @@ namespace Task4Solution
 
             // call Countdown function
             Countdown(countdownStart);
+            ///////////////////////////////////////////////////////////////////
+
+            //Task 9 - Overloaded Multiply Function
+            Console.WriteLine("----Test Overloaded Multiply Function----");
+            // call Multiply function 
+            int result1 = Multiply(2, 4);
+            double result2 = Multiply(20.5, 10.5);
+            int result3 = Multiply(4, 2, 5);
+
+            // display the results
+            Console.WriteLine($"Multiply 2 * 4 = {result1}");
+            Console.WriteLine($"Multiply 20.5 * 10.5  = {result2}");
+            Console.WriteLine($"Multiply 4 * 2 * 5 = {result3}");
+            //////////////////////////////////////////////////////////////////
+
+            //Task 10 - Overloaded Area Calculator
+            Console.WriteLine("Select the shape code to calculate its area:");
+            Console.WriteLine("1) Square");
+            Console.WriteLine("2) Rectangle");
+            int shapeChoice = Convert.ToInt16(Console.ReadLine());
+
+            switch (shapeChoice)
+            {
+                case 1:
+                    Console.WriteLine("Enter the side lenght of square");
+                    double squareSide = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("the area of Square is " + (CalculateArea(squareSide)));
+                    break;
+
+                case 2:
+                    Console.WriteLine("Enter the width of rectangle");
+                    double widthInput = Convert.ToDouble(Console.ReadLine());
+
+                    Console.WriteLine("Enter the length of rectangle");
+                    double lengthInput = Convert.ToDouble(Console.ReadLine());
+
+                    double rectangleAreaResult = CalculateArea(widthInput, lengthInput);
+
+                    Console.WriteLine("the area of rectangle is " + rectangleAreaResult);
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid input");
+                    break;
+            }
         }
     }
 }
