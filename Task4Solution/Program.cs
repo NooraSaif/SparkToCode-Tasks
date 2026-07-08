@@ -111,6 +111,16 @@ namespace Task4Solution
             return a * b * c;
         }
 
+        //Task 10 - Overloaded Area Calculator
+        //double return and single double parameter
+        public static double CalculateArea(double side) 
+        {
+            return side * side;
+        }
+        //double return and two double parameters
+        // An error appeared becuse it had already implemented in Task 6
+
+
 
 
 
@@ -201,6 +211,40 @@ namespace Task4Solution
             Console.WriteLine($"Multiply 20.5 * 10.5  = {result2}");
             Console.WriteLine($"Multiply 4 * 2 * 5 = {result3}");
             //////////////////////////////////////////////////////////////////
+
+            //Task 10 - Overloaded Area Calculator
+            Console.WriteLine("Select the shape code to calculate its area:");
+            Console.WriteLine("1) Square");
+            Console.WriteLine("2) Rectangle");
+            int shapeChoice = Convert.ToInt16(Console.ReadLine());
+
+            switch (shapeChoice)
+            {
+                case 1:
+                    Console.WriteLine("Enter the side lenght of square");
+                    double squareSide = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("the area of Square is " + (CalculateArea(squareSide)));
+                    break;
+
+                case 2:
+                    Console.WriteLine("Enter the width of rectangle");
+                    double widthInput = Convert.ToDouble(Console.ReadLine());
+
+                    Console.WriteLine("Enter the length of rectangle");
+                    double lengthInput = Convert.ToDouble(Console.ReadLine());
+
+                    double rectangleAreaResult = CalculateArea(widthInput, lengthInput);
+
+                    Console.WriteLine("the area of rectangle is " + rectangleAreaResult);
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid input");
+                    break;
+            }
+
+
+
         }
     }
 }
