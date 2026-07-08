@@ -121,88 +121,117 @@ namespace Task4Solution
         // An error appeared becuse it had already implemented in Task 6
 
 
+        //Task 11 - Function-Based Calculator
+        static double Add(double a, double b) 
+        {
+            return a + b;
+        }
+        static double Subtract(double a, double b)
+        {
+            return a - b;
+        }
+        static double MultiplyNumbers(double a, double b)
+        {
+            return a * b;
+        }
+        static double DivideNumbers(double a, double b)
+        {
+            try
+            {
+                return a / b;
+            }
+            catch (DivideByZeroException ex) 
+            {
+                Console.WriteLine("Error: cannot divide by zero");
+                return 0;
+            }
+        }
+        static void DisplayResult(string operation, double result)
+        {
+            Console.WriteLine($"Result of {operation} is:  result");
+        }
 
 
 
         static void Main(string[] args)
         {
-            ////Task 1 - Personalized Welcome Functio
-            //Console.WriteLine("Enter your name:");
-            //string userName = Console.ReadLine();
+            //Task 1 - Personalized Welcome Functio
+            Console.WriteLine("Enter your name:");
+            string userName = Console.ReadLine();
 
-            //// call PrintWelcome function
-            //PrintWelcome(userName);
-            ///////////////////////////////////////////////////////////
-
-            ////Task 2 - Square Number Function
-            //Console.WriteLine("Enter a whole number to square:");
-            //int num = Convert.ToInt16(Console.ReadLine());
-
-            //// call Square function
-            //int result = Square(num);
-            //Console.WriteLine($"The square of {num} is: " + result);
+            // call PrintWelcome function
+            PrintWelcome(userName);
             /////////////////////////////////////////////////////////
 
-            ////Task 3 - Celsius to Fahrenheit Function
-            //Console.WriteLine("Enter the temperature in Celsius:");
-            //double celsiuseNumber = Convert.ToDouble(Console.ReadLine());
+            //Task 2 - Square Number Function
+            Console.WriteLine("Enter a whole number to square:");
+            int num = Convert.ToInt16(Console.ReadLine());
 
-            //// call CelsiusToFahrenheit function
-            //double fahrenheitResult = CelsiusToFahrenheit(celsiuseNumber);
-            //Console.WriteLine($"{celsiuseNumber} Celsius is equal to {fahrenheitResult} Fahrenheit.");
-            /////////////////////////////////////////////////////////////////////////////////////////////
+            // call Square function
+            int result = Square(num);
+            Console.WriteLine($"The square of {num} is: " + result);
+            ///////////////////////////////////////////////////////
 
-            ////Task 4 - Fixed Menu Display Function
-            ////call DisplayMenu function
-            //DisplayMenu();
-            //////////////////////////////////////////////////////////
+            //Task 3 - Celsius to Fahrenheit Function
+            Console.WriteLine("Enter the temperature in Celsius:");
+            double celsiuseNumber = Convert.ToDouble(Console.ReadLine());
 
-            ////Task 5 - Even or Odd Function
-            //Console.WriteLine("Enter a whole number to check if it is even:");
-            //int userNumber = Convert.ToInt16(Console.ReadLine());
-
-            ////call IsEven function
-            //if (IsEven(userNumber) == true)
-            //{
-            //    Console.WriteLine("The number is even.");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("The number is odd.");
-            //}
-            ////////////////////////////////////////////////////////////
-
-            ////Task 6 - Rectangle Area & Perimeter Functions
-            //Console.WriteLine("Enter the width of the rectangle:");
-            //double width = Convert.ToDouble(Console.ReadLine());
-
-            //Console.WriteLine("Enter the length of the rectangle:");
-            //double length = Convert.ToDouble(Console.ReadLine());
-
-            //// call CalculateArea and CalculatePerimeter functions and display the results
-            //Console.WriteLine($"The area of the rectangle is: {CalculateArea(width, length)}");
-            //Console.WriteLine($"The perimeter of the rectangle is: {CalculatePerimeter(width, length)}");
+            // call CelsiusToFahrenheit function
+            double fahrenheitResult = CelsiusToFahrenheit(celsiuseNumber);
+            Console.WriteLine($"{celsiuseNumber} Celsius is equal to {fahrenheitResult} Fahrenheit.");
             ///////////////////////////////////////////////////////////////////////////////////////////
 
-            ////Task 7 - Grade Letter Function
-            //Console.WriteLine("Enter your score:");
-            //int userScore = Convert.ToInt16(Console.ReadLine());
+            //Task 4 - Fixed Menu Display Function
+            //call DisplayMenu function
+            DisplayMenu();
+            ////////////////////////////////////////////////////////
 
-            //Console.WriteLine($"Your grade letter is: {GetGradeLetter(userScore)}");
-            //////////////////////////////////////////////////////////////////////////
+            //Task 5 - Even or Odd Function
+            Console.WriteLine("Enter a whole number to check if it is even:");
+            int userNumber = Convert.ToInt16(Console.ReadLine());
 
-            ////Task 8 - Countdown Function
-            //Console.WriteLine("Enter a number to start the countdown:");
-            //int countdownStart = Convert.ToInt16(Console.ReadLine());
+            //call IsEven function
+            if (IsEven(userNumber) == true)
+            {
+                Console.WriteLine("The number is even.");
+            }
+            else
+            {
+                Console.WriteLine("The number is odd.");
+            }
+            //////////////////////////////////////////////////////////
 
-            //// call Countdown function
-            //Countdown(countdownStart);
-            /////////////////////////////////////////////////////////////////////
+            //Task 6 - Rectangle Area & Perimeter Functions
+            Console.WriteLine("Enter the width of the rectangle:");
+            double width = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter the length of the rectangle:");
+            double length = Convert.ToDouble(Console.ReadLine());
+
+            // call CalculateArea and CalculatePerimeter functions and display the results
+            Console.WriteLine($"The area of the rectangle is: {CalculateArea(width, length)}");
+            Console.WriteLine($"The perimeter of the rectangle is: {CalculatePerimeter(width, length)}");
+            /////////////////////////////////////////////////////////////////////////////////////////
+
+            //Task 7 - Grade Letter Function
+            Console.WriteLine("Enter your score:");
+            int userScore = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine($"Your grade letter is: {GetGradeLetter(userScore)}");
+            ////////////////////////////////////////////////////////////////////////
+
+            //Task 8 - Countdown Function
+            Console.WriteLine("Enter a number to start the countdown:");
+            int countdownStart = Convert.ToInt16(Console.ReadLine());
+
+            // call Countdown function
+            Countdown(countdownStart);
+            ///////////////////////////////////////////////////////////////////
 
             //Task 9 - Overloaded Multiply Function
             Console.WriteLine("----Test Overloaded Multiply Function----");
             // call Multiply function 
-            int result1 = Multiply(2, 4); 
+            int result1 = Multiply(2, 4);
             double result2 = Multiply(20.5, 10.5);
             int result3 = Multiply(4, 2, 5);
 
@@ -242,9 +271,6 @@ namespace Task4Solution
                     Console.WriteLine("Invalid input");
                     break;
             }
-
-
-
         }
     }
 }
