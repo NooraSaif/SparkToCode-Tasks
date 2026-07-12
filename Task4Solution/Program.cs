@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Reflection.Metadata;
+using System.Security.Cryptography;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -151,128 +152,167 @@ namespace Task4Solution
             Console.WriteLine($"Result of {operation} is:  {result}");
         }
 
-
-
-        static void Main(string[] args)
+        //Task 12 - Student Report Card Generator
+        //return average as double and three double scores as parameters
+        static double CalculateAverage(double s1, double s2, double s3)
         {
-            ////Task 1 - Personalized Welcome Functio
-            //Console.WriteLine("Enter your name:");
-            //string userName = Console.ReadLine();
+            return (s1 + s2 + s3) / 3;
+        }
+        //return grade as string and one paramenter
+        static string GetGradeLetter(double average)
+        {
+            if (average >=90)
+            {
+                return "A";
+            }
+            else if (average >=80)
+            {
+                return "B";
+            }
+            else if (average >= 70)
+            {
+                return "C";
+            }
+            else if (average >= 60)
+            {
+                return "D";
+            }
+            else
+            {
+                return "F";
+            }
+        }
+        //no returen 
+        static void PrintReportCard(string name, double average, string grade)
+        {
+            Console.WriteLine("---Report Card---");
+            Console.WriteLine("Student name: " + name);
+            Console.WriteLine("Averge: " + average);
+            Console.WriteLine("Letter grade: " + grade);
+        }
 
-            //// call PrintWelcome function
-            //PrintWelcome(userName);
-            ///////////////////////////////////////////////////////////
 
-            ////Task 2 - Square Number Function
-            //Console.WriteLine("Enter a whole number to square:");
-            //int num = Convert.ToInt16(Console.ReadLine());
 
-            //// call Square function
-            //int result = Square(num);
-            //Console.WriteLine($"The square of {num} is: " + result);
+    static void Main(string[] args)
+        {
+            //Task 1 - Personalized Welcome Functio
+            Console.WriteLine("Enter your name:");
+            string userName = Console.ReadLine();
+
+            // call PrintWelcome function
+            PrintWelcome(userName);
             /////////////////////////////////////////////////////////
 
-            ////Task 3 - Celsius to Fahrenheit Function
-            //Console.WriteLine("Enter the temperature in Celsius:");
-            //double celsiuseNumber = Convert.ToDouble(Console.ReadLine());
+            //Task 2 - Square Number Function
+            Console.WriteLine("Enter a whole number to square:");
+            int num = Convert.ToInt16(Console.ReadLine());
 
-            //// call CelsiusToFahrenheit function
-            //double fahrenheitResult = CelsiusToFahrenheit(celsiuseNumber);
-            //Console.WriteLine($"{celsiuseNumber} Celsius is equal to {fahrenheitResult} Fahrenheit.");
-            /////////////////////////////////////////////////////////////////////////////////////////////
+            // call Square function
+            int result = Square(num);
+            Console.WriteLine($"The square of {num} is: " + result);
+            ///////////////////////////////////////////////////////
 
-            ////Task 4 - Fixed Menu Display Function
-            ////call DisplayMenu function
-            //DisplayMenu();
-            //////////////////////////////////////////////////////////
+            //Task 3 - Celsius to Fahrenheit Function
+            Console.WriteLine("Enter the temperature in Celsius:");
+            double celsiuseNumber = Convert.ToDouble(Console.ReadLine());
 
-            ////Task 5 - Even or Odd Function
-            //Console.WriteLine("Enter a whole number to check if it is even:");
-            //int userNumber = Convert.ToInt16(Console.ReadLine());
-
-            ////call IsEven function
-            //if (IsEven(userNumber) == true)
-            //{
-            //    Console.WriteLine("The number is even.");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("The number is odd.");
-            //}
-            ////////////////////////////////////////////////////////////
-
-            ////Task 6 - Rectangle Area & Perimeter Functions
-            //Console.WriteLine("Enter the width of the rectangle:");
-            //double width = Convert.ToDouble(Console.ReadLine());
-
-            //Console.WriteLine("Enter the length of the rectangle:");
-            //double length = Convert.ToDouble(Console.ReadLine());
-
-            //// call CalculateArea and CalculatePerimeter functions and display the results
-            //Console.WriteLine($"The area of the rectangle is: {CalculateArea(width, length)}");
-            //Console.WriteLine($"The perimeter of the rectangle is: {CalculatePerimeter(width, length)}");
+            // call CelsiusToFahrenheit function
+            double fahrenheitResult = CelsiusToFahrenheit(celsiuseNumber);
+            Console.WriteLine($"{celsiuseNumber} Celsius is equal to {fahrenheitResult} Fahrenheit.");
             ///////////////////////////////////////////////////////////////////////////////////////////
 
-            ////Task 7 - Grade Letter Function
-            //Console.WriteLine("Enter your score:");
-            //int userScore = Convert.ToInt16(Console.ReadLine());
+            //Task 4 - Fixed Menu Display Function
+            //call DisplayMenu function
+            DisplayMenu();
+            ////////////////////////////////////////////////////////
 
-            //Console.WriteLine($"Your grade letter is: {GetGradeLetter(userScore)}");
-            //////////////////////////////////////////////////////////////////////////
+            //Task 5 - Even or Odd Function
+            Console.WriteLine("Enter a whole number to check if it is even:");
+            int userNumber = Convert.ToInt16(Console.ReadLine());
 
-            ////Task 8 - Countdown Function
-            //Console.WriteLine("Enter a number to start the countdown:");
-            //int countdownStart = Convert.ToInt16(Console.ReadLine());
+            //call IsEven function
+            if (IsEven(userNumber) == true)
+            {
+                Console.WriteLine("The number is even.");
+            }
+            else
+            {
+                Console.WriteLine("The number is odd.");
+            }
+            //////////////////////////////////////////////////////////
 
-            //// call Countdown function
-            //Countdown(countdownStart);
-            /////////////////////////////////////////////////////////////////////
+            //Task 6 - Rectangle Area & Perimeter Functions
+            Console.WriteLine("Enter the width of the rectangle:");
+            double width = Convert.ToDouble(Console.ReadLine());
 
-            ////Task 9 - Overloaded Multiply Function
-            //Console.WriteLine("----Test Overloaded Multiply Function----");
-            //// call Multiply function 
-            //int result1 = Multiply(2, 4);
-            //double result2 = Multiply(20.5, 10.5);
-            //int result3 = Multiply(4, 2, 5);
+            Console.WriteLine("Enter the length of the rectangle:");
+            double length = Convert.ToDouble(Console.ReadLine());
 
-            //// display the results
-            //Console.WriteLine($"Multiply 2 * 4 = {result1}");
-            //Console.WriteLine($"Multiply 20.5 * 10.5  = {result2}");
-            //Console.WriteLine($"Multiply 4 * 2 * 5 = {result3}");
-            ////////////////////////////////////////////////////////////////////
+            // call CalculateArea and CalculatePerimeter functions and display the results
+            Console.WriteLine($"The area of the rectangle is: {CalculateArea(width, length)}");
+            Console.WriteLine($"The perimeter of the rectangle is: {CalculatePerimeter(width, length)}");
+            /////////////////////////////////////////////////////////////////////////////////////////
 
-            ////Task 10 - Overloaded Area Calculator
-            //Console.WriteLine("Select the shape code to calculate its area:");
-            //Console.WriteLine("1) Square");
-            //Console.WriteLine("2) Rectangle");
-            //int shapeChoice = Convert.ToInt16(Console.ReadLine());
+            //Task 7 - Grade Letter Function
+            Console.WriteLine("Enter your score:");
+            int userScore = Convert.ToInt16(Console.ReadLine());
 
-            //switch (shapeChoice)
-            //{
-            //    case 1:
-            //        Console.WriteLine("Enter the side lenght of square");
-            //        double squareSide = Convert.ToDouble(Console.ReadLine());
-            //        Console.WriteLine("the area of Square is " + (CalculateArea(squareSide)));
-            //        break;
+            Console.WriteLine($"Your grade letter is: {GetGradeLetter(userScore)}");
+            ////////////////////////////////////////////////////////////////////////
 
-            //    case 2:
-            //        Console.WriteLine("Enter the width of rectangle");
-            //        double widthInput = Convert.ToDouble(Console.ReadLine());
+            //Task 8 - Countdown Function
+            Console.WriteLine("Enter a number to start the countdown:");
+            int countdownStart = Convert.ToInt16(Console.ReadLine());
 
-            //        Console.WriteLine("Enter the length of rectangle");
-            //        double lengthInput = Convert.ToDouble(Console.ReadLine());
+            // call Countdown function
+            Countdown(countdownStart);
+            ///////////////////////////////////////////////////////////////////
 
-            //        double rectangleAreaResult = CalculateArea(widthInput, lengthInput);
+            //Task 9 - Overloaded Multiply Function
+            Console.WriteLine("----Test Overloaded Multiply Function----");
+            // call Multiply function 
+            int result1 = Multiply(2, 4);
+            double result2 = Multiply(20.5, 10.5);
+            int result3 = Multiply(4, 2, 5);
 
-            //        Console.WriteLine("the area of rectangle is " + rectangleAreaResult);
-            //        break;
+            // display the results
+            Console.WriteLine($"Multiply 2 * 4 = {result1}");
+            Console.WriteLine($"Multiply 20.5 * 10.5  = {result2}");
+            Console.WriteLine($"Multiply 4 * 2 * 5 = {result3}");
+            //////////////////////////////////////////////////////////////////
 
-            //    default:
-            //        Console.WriteLine("Invalid input");
-            //        break;
-            //}
+            //Task 10 - Overloaded Area Calculator
+            Console.WriteLine("Select the shape code to calculate its area:");
+            Console.WriteLine("1) Square");
+            Console.WriteLine("2) Rectangle");
+            int shapeChoice = Convert.ToInt16(Console.ReadLine());
 
-            // Task 11 - Function-Based Calculator
+            switch (shapeChoice)
+            {
+                case 1:
+                    Console.WriteLine("Enter the side lenght of square");
+                    double squareSide = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("the area of Square is " + (CalculateArea(squareSide)));
+                    break;
+
+                case 2:
+                    Console.WriteLine("Enter the width of rectangle");
+                    double widthInput = Convert.ToDouble(Console.ReadLine());
+
+                    Console.WriteLine("Enter the length of rectangle");
+                    double lengthInput = Convert.ToDouble(Console.ReadLine());
+
+                    double rectangleAreaResult = CalculateArea(widthInput, lengthInput);
+
+                    Console.WriteLine("the area of rectangle is " + rectangleAreaResult);
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid input");
+                    break;
+            }
+
+            //Task 11 - Function - Based Calculator
 
             bool isExit = false;
 
@@ -306,7 +346,7 @@ namespace Task4Solution
                 Console.Write("Enter the second number: ");
                 double secondNum = Convert.ToDouble(Console.ReadLine());
 
-                switch (userChoice) 
+                switch (userChoice)
                 {
                     case "1":
                         DisplayResult("Add", Add(firstNum, secondNum));
@@ -331,6 +371,24 @@ namespace Task4Solution
                 }
 
             }
+
+            //Task 12 - Student Report Card Generator
+
+            Console.WriteLine("Enter student name: ");
+            string studentName = Console.ReadLine();
+
+            Console.WriteLine("Enter score for subject 1: ");
+            double s1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter score for subject 2: ");
+            double s2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter score for subject 3: ");
+            double s3 = Convert.ToDouble(Console.ReadLine());
+
+            double AvregeResult = CalculateAverage(s1, s2, s3);
+            string gradeResult = GetGradeLetter(AvregeResult);
+            PrintReportCard(studentName, result, gradeResult);
         }
     }
 }
