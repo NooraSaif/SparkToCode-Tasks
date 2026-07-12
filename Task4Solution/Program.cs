@@ -297,6 +297,29 @@ namespace Task4Solution
                 Console.Write("Enter the second number: ");
                 double secondNum = Convert.ToDouble(Console.ReadLine());
 
+                switch (userChoice) 
+                {
+                    case "1":
+                        DisplayResult("Add", Add(firstNum, secondNum));
+                        break;
+
+                    case "2":
+                        DisplayResult("Subtract", Subtract(firstNum, secondNum));
+                        break;
+
+                    case "3":
+                        DisplayResult("Multiply", MultiplyNumbers(firstNum, secondNum));
+                        break;
+
+                    case "4":
+                        DisplayResult("Divide", DivideNumbers(firstNum, secondNum));
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid input. please select from 1-5");
+                        break;
+
+                }
 
             }
         }
